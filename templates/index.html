@@ -1,0 +1,16 @@
+{% extends 'base.html' %} 
+
+{% block head %} 
+
+{% endblock %} 
+
+{% block body %} 
+<h1>{{first_record.Title}}</h1>
+<p>
+    {% for k,v in first_record.items() %} 
+        <ul>
+            <li>{{v}}</li>
+        </ul>
+    {% endfor %}
+</p>
+{% endblock %}
