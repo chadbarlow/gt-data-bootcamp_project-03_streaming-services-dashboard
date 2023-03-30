@@ -6,6 +6,7 @@
 #       > index.html
 from flask import Flask, render_template, url_for
 from flask_pymongo import PyMongo
+import create_mongodb
 
 # create instance of Flask class
 app = Flask(__name__)
@@ -17,6 +18,7 @@ mongo = PyMongo(app)
 @app.route("/")
 # what will be displayed on pg wrapped in this function
 def home():
+    create_mongodb.create_db()
     #first document in the collection
     first_record = mongo.db.streamData.find_one()
     return render_template("index.html", first_record=first_record)
