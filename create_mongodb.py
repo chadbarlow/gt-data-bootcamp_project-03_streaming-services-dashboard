@@ -8,8 +8,8 @@ def create_db():
     client = pymongo.MongoClient("mongodb://localhost:27017")
 
     # read in csv file as dataframe
-    df_horizontal = pd.read_csv("complete_horizontal.csv")
-    df_vertical = pd.read_csv("complete_vertical.csv")
+    df_horizontal = pd.read_csv("static/etl/csv/complete_horizontal.csv")
+    df_vertical = pd.read_csv("static/etl/csv/complete_vertical.csv")
 
     # rename columns to 1 word strings for proper mongo keys
     # df = df.rename(columns={"Rotten Tomatoes Score": "Score",
