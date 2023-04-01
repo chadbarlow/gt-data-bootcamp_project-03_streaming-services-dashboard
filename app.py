@@ -17,21 +17,33 @@ mongo = PyMongo(app)
 def home():
     create_mongodb.create_db()
     #first document in the collection
-    first_record = mongo.db.streamData.find_one()
+    first_record = mongo.db.streamHorizontal.find_one()
     return render_template("index.html", first_record=first_record)
 # after the source file is where the {{variable}} from the html is being set to
 
-@app.route("/get_data")
-def get_data():
+@app.route("/get_horizontal")
+def get_horizontal():
     # variable to find all data in streamData collection
-    mongo_all = mongo.db.streamData.find()
+    mongo_horizontal = mongo.db.streamHorizontal.find()
     #empty list to be transformed into json object
-    json_all = []
-    for all in mongo_all:
-        json_all.append(all)
+    json_horizontal = []
+    for all in mongo_horizontal:
+        json_horizontal.append(all)
     # converting mongo encoding to json
-    json_all = json.dumps(json_all, default=json_util.default)
-    return json_all
+    json_horizontal = json.dumps(json_horizontal, default=json_util.default)
+    return json_horizontal
+
+@app.route("/get_vertical")
+def get_vertical():
+    # variable to find all data in streamData collection
+    mongo_vertical = mongo.db.streamVertical.find()
+    #empty list to be transformed into json object
+    json_vertical = []
+    for all in mongo_vertical:
+        json_vertical.append(all)
+    # converting mongo encoding to json
+    json_vertical = json.dumps(json_vertical, default=json_util.default)
+    return json_vertical
 
 # run webpage
 # set debug to True if you want server to auto reload code changes
