@@ -80,6 +80,20 @@
    text-align: center;
  }
 
+ #logo{
+  /*background: #4aaaa5;*/
+  height: 100%;
+  font-size: 34px;
+  font-weight: bold;
+  color: #8AAAE5;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  } 
+  
+  .choose-platform{
+      justify-content: center;
+  
+  }
+
  /* Card styles */
  .card {
    background-color: #fff;
