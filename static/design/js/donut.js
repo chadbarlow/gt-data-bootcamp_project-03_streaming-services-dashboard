@@ -130,14 +130,14 @@ function buildCharts(platform) {
           var trace4 = {
             x: year,
             y: action_adventure,
-            name: 'Action $ Adventure',
+            name: 'Action & Adventure',
             type: 'bar'
           };
           
           var trace5 = {
             x: year,
             y: horror_suspense,
-            name: 'Horror $ Suspense',
+            name: 'Horror & Suspense',
             type: 'bar'
           };
           
