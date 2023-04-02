@@ -1,7 +1,7 @@
 function main() {
   let selector = d3.select('#selDataset');
   platformNames = ['Netflix', 'Hulu', 'Disney Plus', 'Amazon Prime'];
-  d3.json('complete_vertical.json').then((data) => {
+  d3.json('../static/etl/json/complete_vertical.json').then((data) => {
     // console.log(data[0].added.substring(0,4));    
     platformNames.forEach(element => {
       selector.append('option').text(element).property('value', element);
@@ -123,7 +123,7 @@ function buildCharts(platform) {
             y: drama,
             name: 'Drama',
             type: 'bar',
-            xaxis: 'category'
+            
           };
           
           var trace2 = {
@@ -131,7 +131,7 @@ function buildCharts(platform) {
             y: comedy,
             name: 'Comedy',
             type: 'bar',
-            xaxis: 'category'
+            
           };
           
           var trace3 = {
@@ -139,7 +139,7 @@ function buildCharts(platform) {
             y: international,
             name: 'International',
             type: 'bar',
-            xaxis: 'category'
+            
           };
           
           var trace4 = {
@@ -147,7 +147,7 @@ function buildCharts(platform) {
             y: action_adventure,
             name: 'Action & Adventure',
             type: 'bar',
-            xaxis: 'category'
+            
           };
           
           var trace5 = {
@@ -155,7 +155,7 @@ function buildCharts(platform) {
             y: horror_suspense,
             name: 'Horror & Suspense',
             type: 'bar',
-            xaxis: 'category'
+            
           };
           
 
