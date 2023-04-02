@@ -14,10 +14,10 @@ var padding = {top:20, right:40, bottom:0, left:0},
                     {"label":"International",  "value":1}, //font-family
                     {"label":"Documentaries",  "value":2}, //color
                     {"label":"Comedies",  "value":3}, //font-weight
-                    {"label":"Action",  "value":4}, //font-size
+                    {"label":"Action & Adventure",  "value":4}, //font-size
                     {"label":"Romance",  "value":5}, //background-color
-                    {"label":"Horror",  "value":6}, //nesting
-                    {"label":"Fantasy",  "value":7}, //bottom
+                    {"label":"Horror & Suspense",  "value":6}, //nesting
+                    {"label":"Family",  "value":7}, //bottom
                     
         ];
         var svg = d3.select('#chart')
@@ -91,7 +91,7 @@ var padding = {top:20, right:40, bottom:0, left:0},
                     //populate question
                     // d3.select("#question h1")
                     //     .text(data[picked].question);
-                    d3.json("complete_vertical.json", function(json_data) {
+                    d3.json("../complete_vertical.json", function(json_data) {
                         // console.log(json_data[0]['Genres']);
 
                         getRandMovieSuggestion(data[picked].label, json_data);
