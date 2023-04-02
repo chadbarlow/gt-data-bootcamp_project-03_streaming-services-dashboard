@@ -91,7 +91,7 @@ var padding = {top:20, right:40, bottom:0, left:0},
                     //populate question
                     // d3.select("#question h1")
                     //     .text(data[picked].question);
-                    d3.json("complete_vertical.json", function(json_data) {
+                    d3.json("../static/etl/json/complete_vertical.json", function(json_data) {
                         // console.log(json_data[0]['Genres']);
 
                         getRandMovieSuggestion(data[picked].label, json_data);
