@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>My Sunburst Chart</title>
+    <!-- Import D3 library -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- Import d3-hierarchy module -->
+    <!-- <script src="https://unpkg.com/d3-hierarchy@2.1.1/dist/d3-hierarchy.min.js"></script> -->
+    <!-- Import Sunburst function -->
+    <!-- <script src="sunburst.js"></script> -->
+  </head>
+  <body>
+    <h1>My Sunburst Chart</h1>
+    <div id="chart-container"></div>
+
+    <script>
+      const flare = {
+        name: "flare",
+        children: [
+          {
+            name: "Amazon Prime",
+            children: [
+              {
+                name: "Action & Adventure",
+                children: [
+                  {
+                    name: "Action",
+                    size: 470,
+                  },
+                  {
+                    name: "Adventure",
+                    size: 109,
+                  },
+                ],
+              },
+              {
+                name: "Animation",
+                children: [
+                  {
+                    name: "Animation",
+                    size: 28,
+                  },
+                  {
+                    name: "Anime",
+                    size: 1,
+                  },
+                ],
+              },
+              {
+                name: "Comedy",
+                children: [
+                  {
+                    name: "Comedies",
+                    size: 606,
+                  },
+                ],
+              },
+              {
+                name: "Documentary",
+                children: [
+                  {
+                    name: "Arts",
+                    size: 163,
+                  },
+                  {
+                    name: "Documentaries",
+                    size: 207,
+                  },
+                  {
+                    name: "History",
+                    size: 8,
+                  },
+                  {
+                    name: "Military and War",
+                    size: 18,
+                  },
+                ],
+              },
+              {
+                name: "Drama",
+                children: [
+                  {
+                    name: "Arthouse",
+                    size: 50,
+                  },
+                  {
+                    name: "Drama",
+                    size: 1001,
+                  },
+                ],
+              },
+              {
+                name: "Family",
+                children: [
+                  {
+                    name: "Kids",
+                    size: 101,
+                  },
+                  {
+                    name: "Teen",
+                    size: 39,
+                  },
+                ],
+              },
+              {
+                name: "Horror",
+                children: [
+                  {
+                    name: "Horror",
+                    size: 266,
+                  },
+                ],
+              },
+              {
+                name: "International",
+                children: [
+                  {
+                    name: "International",
+                    size: 123,
+                  },
+                ],
+              },
+              {
+                name: "Music",
+                children: [
+                  {
+                    name: "Music",
+                    size: 13,
+                  },
+                ],
+              },
+              {
+                name: "Reality & Variety",
+                children: [
+                  {
+                    name: "Entertainment",
+                    size: 163,
+                  },
+                  {
+                    name: "Faith & Spirituality",
+                    size: 21,
+                  },
+                  {
+                    name: "LGBTQ",
+                    size: 45,
+                  },
+                  {
+                    name: "Special Interest",
+                    size: 192,
+                  },
+                ],
+              },
+              {
+                name: "Romance",
+                children: [
+                  {
+                    name: "Romance",
+                    size: 172,
+                  },
+                ],
+              },
+              {
+                name: "Sci-Fi & Fantasy",
+                children: [
+                  {
+                    name: "Fantasy",
+                    size: 25,
+                  },
+                  {
+                    name: "Sci-Fi & Fantasy",
+                    size: 144,
+                  },
+                ],
+              },
+              {
+                name: "Sports",
+                children: [
+                  {
+                    name: "Sports",
+                    size: 44,
+                  },
+                ],
+              },
+              {
+                name: "Thriller",
+                children: [
+                  {
+                    name: "Suspense",
+                    size: 481,
+                  },
+                ],
+              },
+              {
+                name: "Western",
+                children: [
+                  {
+                    name: "Western",
+                    size: 95,
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            name: "Disney Plus",
+            children: [
+              {
+                name: "Action & Adventure",
+                children: [
+                  {
+                    name: "Action & Adventure",
+                    size: 217,
+                  },
+                ],
+              },
+              {
+                name: "Animation",
+                children: [
+                  {
+                    name: "Animation",
+                    size: 270,
+                  },
+                ],
+              },
+              {
+                name: "Comedy",
+                children: [
+                  {
+                    name: "Buddy",
+                    size: 20,
+                  },
+                  {
+                    name: "Comedies",
+                    size: 289,
+                  },
+                  {
+                    name: "Parody",
+                    size: 2,
+                  },
+                  {
+                    name: "Survival",
+                    size: 1,
+                  },
+                ],
+              },
+              {
+                name: "Documentary",
+                children: [
+                  {
+                    name: "Animals & Nature",
+                    size: 102,
+                  },
+                  {
+                    name: "Biographical",
+                    size: 32,
+                  },
+                  {
+                    name: "Documentaries",
+                    size: 117,
+                  },
+                  {
+                    name: "History",
+                    size: 29,
+                  },
+                  {
+                    name: "Medical",
+                    size: 2,
+                  },
+                ],
+              },
+              {
+                name: "Drama",
+                children: [
+                  {
+                    name: "Anthology",
+                    size: 6,
+                  },
+                  {
+                    name: "Coming of Age",
+                    size: 120,
+                  },
+                  {
+                    name: "Drama",
+                    size: 98,
+                  },
+                ],
+              },
+              {
+                name: "Family",
+                children: [
+                  {
+                    name: "Family",
+                    size: 396,
+                  },
+                  {
+                    name: "Kids",
+                    size: 28,
+                  },
+                ],
+              },
+              {
+                name: "Music",
+                children: [
+                  {
+                    name: "Dance",
+                    size: 4,
+                  },
+                  {
+                    name: "Music",
+                    size: 56,
+                  },
+                ],
+              },
+              {
+                name: "Reality & Variety",
+                children: [
+                  {
+                    name: "Reality",
+                    size: 2,
+                  },
+                  {
+                    name: "Variety",
+                    size: 2,
+                  },
+                ],
+              },
+              {
+                name: "Romance",
+                children: [
+                  {
+                    name: "Romance",
+                    size: 12,
+                  },
+                  {
+                    name: "Romantic Comedies",
+                    size: 2,
+                  },
+                ],
+              },
+              {
+                name: "Sci-Fi & Fantasy",
+                children: [
+                  {
+                    name: "Fantasy",
+                    size: 102,
+                  },
+                  {
+                    name: "Sci-Fi & Fantasy",
+                    size: 36,
+                  },
+                ],
+              },
+              {
+                name: "Sports",
+                children: [
+                  {
+                    name: "Sports",
+                    size: 32,
+                  },
+                ],
+              },
+              {
+                name: "Superhero",
+                children: [
+                  {
+                    name: "Superhero",
+                    size: 1,
+                  },
+                ],
+              },
+              {
+                name: "Thriller",
+                children: [
+                  {
+                    name: "Crime",
+                    size: 13,
+                  },
+                  {
+                    name: "Disaster",
+                    size: 2,
+                  },
+                  {
+                    name: "Mystery",
+                    size: 7,
+                  },
+                  {
+                    name: "Spy/Espionage",
+                    size: 1,
+                  },
+                  {
+                    name: "Thriller",
+                    size: 2,
+                  },
+                ],
+              },
+              {
+                name: "Western",
+                children: [
+                  {
+                    name: "Western",
+                    size: 5,
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            name: "Hulu",
+            children: [
+              {
+                name: "Action & Adventure",
+                children: [
+                  {
+                    name: "Action",
+                    size: 129,
+                  },
+                  {
+                    name: "Adventure",
+                    size: 120,
+                  },
+                ],
+              },
+              {
+                name: "Animation",
+                children: [
+                  {
+                    name: "Anime",
+                    size: 2,
+                  },
+                  {
+                    name: "Cartoons",
+                    size: 4,
+                  },
+                ],
+              },
+              {
+                name: "Comedy",
+                children: [
+                  {
+                    name: "Comedies",
+                    size: 173,
+                  },
+                  {
+                    name: "Stand Up",
+                    size: 2,
+                  },
+                ],
+              },
+              {
+                name: "Documentary",
+                children: [
+                  {
+                    name: "Black Stories",
+                    size: 40,
+                  },
+                  {
+                    name: "Documentaries",
+                    size: 121,
+                  },
+                  {
+                    name: "History",
+                    size: 22,
+                  },
+                  {
+                    name: "Science & Technology",
+                    size: 5,
+                  },
+                ],
+              },
+              {
+                name: "Drama",
+                children: [
+                  {
+                    name: "Classic Movies",
+                    size: 7,
+                  },
+                  {
+                    name: "Drama",
+                    size: 286,
+                  },
+                ],
+              },
+              {
+                name: "Family",
+                children: [
+                  {
+                    name: "Family",
+                    size: 27,
+                  },
+                  {
+                    name: "Kids",
+                    size: 21,
+                  },
+                  {
+                    name: "Teen",
+                    size: 1,
+                  },
+                ],
+              },
+              {
+                name: "Horror",
+                children: [
+                  {
+                    name: "Horror",
+                    size: 139,
+                  },
+                ],
+              },
+              {
+                name: "International",
+                children: [
+                  {
+                    name: "International",
+                    size: 22,
+                  },
+                ],
+              },
+              {
+                name: "Music",
+                children: [
+                  {
+                    name: "Music",
+                    size: 35,
+                  },
+                ],
+              },
+              {
+                name: "Reality & Variety",
+                children: [
+                  {
+                    name: "Adult Animation",
+                    size: 1,
+                  },
+                  {
+                    name: "LGBTQ",
+                    size: 43,
+                  },
+                  {
+                    name: "Lifestyle & Culture",
+                    size: 1,
+                  },
+                  {
+                    name: "News",
+                    size: 4,
+                  },
+                ],
+              },
+              {
+                name: "Romance",
+                children: [
+                  {
+                    name: "Romance",
+                    size: 76,
+                  },
+                ],
+              },
+              {
+                name: "Sci-Fi & Fantasy",
+                children: [
+                  {
+                    name: "Sci-Fi & Fantasy",
+                    size: 41,
+                  },
+                ],
+              },
+              {
+                name: "Sports",
+                children: [
+                  {
+                    name: "Sports",
+                    size: 6,
+                  },
+                ],
+              },
+              {
+                name: "Thriller",
+                children: [
+                  {
+                    name: "Crime",
+                    size: 43,
+                  },
+                  {
+                    name: "Mystery",
+                    size: 24,
+                  },
+                  {
+                    name: "Thriller",
+                    size: 104,
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            name: "Netflix",
+            children: [
+              {
+                name: "Action & Adventure",
+                children: [
+                  {
+                    name: "Action & Adventure",
+                    size: 441,
+                  },
+                ],
+              },
+              {
+                name: "Animation",
+                children: [
+                  {
+                    name: "Anime",
+                    size: 30,
+                  },
+                ],
+              },
+              {
+                name: "Comedy",
+                children: [
+                  {
+                    name: "Comedies",
+                    size: 944,
+                  },
+                  {
+                    name: "Stand Up",
+                    size: 248,
+                  },
+                ],
+              },
+              {
+                name: "Documentary",
+                children: [
+                  {
+                    name: "Documentaries",
+                    size: 381,
+                  },
+                ],
+              },
+              {
+                name: "Drama",
+                children: [
+                  {
+                    name: "Classic Movies",
+                    size: 27,
+                  },
+                  {
+                    name: "Cult Movies",
+                    size: 25,
+                  },
+                  {
+                    name: "Drama",
+                    size: 1402,
+                  },
+                  {
+                    name: "Independent Movies",
+                    size: 414,
+                  },
+                ],
+              },
+              {
+                name: "Family",
+                children: [
+                  {
+                    name: "Children & Family Movies",
+                    size: 308,
+                  },
+                ],
+              },
+              {
+                name: "Horror",
+                children: [
+                  {
+                    name: "Horror",
+                    size: 168,
+                  },
+                ],
+              },
+              {
+                name: "International",
+                children: [
+                  {
+                    name: "International",
+                    size: 1533,
+                  },
+                ],
+              },
+              {
+                name: "Music",
+                children: [
+                  {
+                    name: "Music",
+                    size: 194,
+                  },
+                ],
+              },
+              {
+                name: "Reality & Variety",
+                children: [
+                  {
+                    name: "Faith & Spirituality",
+                    size: 32,
+                  },
+                  {
+                    name: "LGBTQ",
+                    size: 58,
+                  },
+                ],
+              },
+              {
+                name: "Romance",
+                children: [
+                  {
+                    name: "Romance",
+                    size: 370,
+                  },
+                ],
+              },
+              {
+                name: "Sci-Fi & Fantasy",
+                children: [
+                  {
+                    name: "Sci-Fi & Fantasy",
+                    size: 118,
+                  },
+                ],
+              },
+              {
+                name: "Sports",
+                children: [
+                  {
+                    name: "Sports",
+                    size: 109,
+                  },
+                ],
+              },
+              {
+                name: "Thriller",
+                children: [
+                  {
+                    name: "Thriller",
+                    size: 315,
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      };
+
+      function Sunburst(
+        data = flare,
+        {
+          // data is either tabular (array of objects) or hierarchy (nested objects)
+          path, // as an alternative to id and parentId, returns an array identifier, imputing internal nodes
+          id = Array.isArray(data) ? (d) => d.id : null, // if tabular data, given a d in data, returns a unique identifier (string)
+          parentId = Array.isArray(data) ? (d) => d.parentId : null, // if tabular data, given a node d, returns its parent’s identifier
+          children, // if hierarchical data, given a d in data, returns its children
+          value = (d) => d.size, // size of each node (file); null for internal nodes (folders)
+          sort = (a, b) => d3.descending(a.value, b.value), // how to sort nodes prior to layout
+          label = (d) => d.name, // display name for each cell
+          title = (d, n) =>
+            `${n
+              .ancestors()
+              .reverse()
+              .map((d) => d.data.name)
+              .join(".")}\n${n.value.toLocaleString("en")}`, // given a node d, returns its hover text
+          link, // given a node d, its link (if any)
+          linkTarget = "_blank", // the target attribute for links (if any)
+          width = 1152, // outer width, in pixels
+          height = 1152, // outer height, in pixels
+          margin = 1, // shorthand for margins
+          marginTop = margin, // top margin, in pixels
+          marginRight = margin, // right margin, in pixels
+          marginBottom = margin, // bottom margin, in pixels
+          marginLeft = margin, // left margin, in pixels
+          padding = 1, // separation between arcs
+          radius = Math.min(
+            width - marginLeft - marginRight,
+            height - marginTop - marginBottom
+          ) / 2, // outer radius
+          color = d3.interpolateRainbow, // color scheme, if any
+          fill = "#ccc", // fill for arcs (if no color encoding)
+          fillOpacity = 0.6, // fill opacity for arcs
+        } = {}
+      ) {
+        // If id and parentId options are specified, or the path option, use d3.stratify
+        // to convert tabular data to a hierarchy; otherwise we assume that the data is
+        // specified as an object {children} with nested objects (a.k.a. the “flare.json”
+        // format), and use d3.hierarchy.
+        const root =
+          path != null
+            ? d3.stratify().path(path)(data)
+            : id != null || parentId != null
+            ? d3.stratify().id(id).parentId(parentId)(data)
+            : d3.hierarchy(data, children);
+
+        // Compute the values of internal nodes by aggregating from the leaves.
+        value == null ? root.count() : root.sum((d) => Math.max(0, value(d)));
+
+        // Sort the leaves (typically by descending value for a pleasing layout).
+        if (sort != null) root.sort(sort);
+
+        // Compute the partition layout. Note polar coordinates: x is angle and y is radius.
+        d3.partition().size([2 * Math.PI, radius])(root);
+
+        // Construct a color scale.
+        if (color != null) {
+          color = d3
+            .scaleSequential([0, root.children.length - 1], color)
+            .unknown(fill);
+          root.children.forEach((child, i) => (child.index = i));
+        }
+
+        // Construct an arc generator.
+        const arc = d3
+          .arc()
+          .startAngle((d) => d.x0)
+          .endAngle((d) => d.x1)
+          .padAngle((d) => Math.min((d.x1 - d.x0) / 2, (2 * padding) / radius))
+          .padRadius(radius / 2)
+          .innerRadius((d) => d.y0)
+          .outerRadius((d) => d.y1 - padding);
+
+        const svg = d3
+          .create("svg")
+          .attr("viewBox", [
+            marginRight - marginLeft - width / 2,
+            marginBottom - marginTop - height / 2,
+            width,
+            height,
+          ])
+          .attr("width", width)
+          .attr("height", height)
+          .attr("style", "max-width: 100%; height: auto; height: intrinsic;")
+          .attr("font-family", "sans-serif")
+          .attr("font-size", 10)
+          .attr("text-anchor", "middle");
+
+        const cell = svg
+          .selectAll("a")
+          .data(root.descendants())
+          .join("a")
+          .attr("xlink:href", link == null ? null : (d) => link(d.data, d))
+          .attr("target", link == null ? null : linkTarget);
+
+        cell
+          .append("path")
+          .attr("d", arc)
+          .attr(
+            "fill",
+            color ? (d) => color(d.ancestors().reverse()[1]?.index) : fill
+          )
+          .attr("fill-opacity", fillOpacity);
+
+        if (label != null)
+          cell
+            .filter((d) => ((d.y0 + d.y1) / 2) * (d.x1 - d.x0) > 10)
+            .append("text")
+            .attr("transform", (d) => {
+              if (!d.depth) return;
+              const x = (((d.x0 + d.x1) / 2) * 180) / Math.PI;
+              const y = (d.y0 + d.y1) / 2;
+              return `rotate(${x - 90}) translate(${y},0) rotate(${
+                x < 180 ? 0 : 180
+              })`;
+            })
+            .attr("dy", "0.32em")
+            .text((d) => label(d.data, d));
+
+        if (title != null) cell.append("title").text((d) => title(d.data, d));
+
+        return svg.node();
+      }
+
+      chart = Sunburst();
+      console.log(chart);
+      document.getElementById("chart-container").appendChild(chart);
+    </script>
+  </body>
+</html>
