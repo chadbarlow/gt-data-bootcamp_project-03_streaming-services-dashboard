@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>My Sunburst Chart</title>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-sunburst.min.js"></script>
+    <style>
+      #container {
+        width: 100%;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script>
+      const data = [
+        {
+          name: "Root",
+          normal: { fill: "#fff" },
+          selected: { fill: "#b32400" },
+          children: [
+            {
+              name: "Amazon Prime",
+              children: [
+                {
+                  name: "Action & Adventure",
+                  children: [
+                    { name: "Action", value: 470 },
+                    {
+                      name: "Adventure",
+                      value: 109,
+                    },
+                  ],
+                },
+                {
+                  name: "Animation",
+                  children: [
+                    {
+                      name: "Animation",
+                      value: 28,
+                    },
+                    {
+                      name: "Anime",
+                      value: 1,
+                    },
+                  ],
+                },
+                {
+                  name: "Comedy",
+                  children: [
+                    {
+                      name: "Comedies",
+                      value: 606,
+                    },
+                  ],
+                },
+                {
+                  name: "Documentary",
+                  children: [
+                    {
+                      name: "Arts",
+                      value: 163,
+                    },
+                    {
+                      name: "Documentaries",
+                      value: 207,
+                    },
+                    {
+                      name: "History",
+                      value: 8,
+                    },
+                    {
+                      name: "Military and War",
+                      value: 18,
+                    },
+                  ],
+                },
+                {
+                  name: "Drama",
+                  children: [
+                    {
+                      name: "Arthouse",
+                      value: 50,
+                    },
+                    {
+                      name: "Drama",
+                      value: 1001,
+                    },
+                  ],
+                },
+                {
+                  name: "Family",
+                  children: [
+                    {
+                      name: "Kids",
+                      value: 101,
+                    },
+                    {
+                      name: "Teen",
+                      value: 39,
+                    },
+                  ],
+                },
+                {
+                  name: "Horror",
+                  children: [
+                    {
+                      name: "Horror",
+                      value: 266,
+                    },
+                  ],
+                },
+                {
+                  name: "International",
+                  children: [
+                    {
+                      name: "International",
+                      value: 123,
+                    },
+                  ],
+                },
+                {
+                  name: "Music",
+                  children: [
+                    {
+                      name: "Music",
+                      value: 13,
+                    },
+                  ],
+                },
+                {
+                  name: "Reality & Variety",
+                  children: [
+                    {
+                      name: "Entertainment",
+                      value: 163,
+                    },
+                    {
+                      name: "Faith & Spirituality",
+                      value: 21,
+                    },
+                    {
+                      name: "LGBTQ",
+                      value: 45,
+                    },
+                    {
+                      name: "Special Interest",
+                      value: 192,
+                    },
+                  ],
+                },
+                {
+                  name: "Romance",
+                  children: [
+                    {
+                      name: "Romance",
+                      value: 172,
+                    },
+                  ],
+                },
+                {
+                  name: "Sci-Fi & Fantasy",
+                  children: [
+                    {
+                      name: "Fantasy",
+                      value: 25,
+                    },
+                    {
+                      name: "Sci-Fi & Fantasy",
+                      value: 144,
+                    },
+                  ],
+                },
+                {
+                  name: "Sports",
+                  children: [
+                    {
+                      name: "Sports",
+                      value: 44,
+                    },
+                  ],
+                },
+                {
+                  name: "Thriller",
+                  children: [
+                    {
+                      name: "Suspense",
+                      value: 481,
+                    },
+                  ],
+                },
+                {
+                  name: "Western",
+                  children: [
+                    {
+                      name: "Western",
+                      value: 95,
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              name: "Disney Plus",
+              children: [
+                {
+                  name: "Action & Adventure",
+                  children: [
+                    {
+                      name: "Action & Adventure",
+                      value: 217,
+                    },
+                  ],
+                },
+                {
+                  name: "Animation",
+                  children: [
+                    {
+                      name: "Animation",
+                      value: 270,
+                    },
+                  ],
+                },
+                {
+                  name: "Comedy",
+                  children: [
+                    {
+                      name: "Buddy",
+                      value: 20,
+                    },
+                    {
+                      name: "Comedies",
+                      value: 289,
+                    },
+                    {
+                      name: "Parody",
+                      value: 2,
+                    },
+                    {
+                      name: "Survival",
+                      value: 1,
+                    },
+                  ],
+                },
+                {
+                  name: "Documentary",
+                  children: [
+                    {
+                      name: "Animals & Nature",
+                      value: 102,
+                    },
+                    {
+                      name: "Biographical",
+                      value: 32,
+                    },
+                    {
+                      name: "Documentaries",
+                      value: 117,
+                    },
+                    {
+                      name: "History",
+                      value: 29,
+                    },
+                    {
+                      name: "Medical",
+                      value: 2,
+                    },
+                  ],
+                },
+                {
+                  name: "Drama",
+                  children: [
+                    {
+                      name: "Anthology",
+                      value: 6,
+                    },
+                    {
+                      name: "Coming of Age",
+                      value: 120,
+                    },
+                    {
+                      name: "Drama",
+                      value: 98,
+                    },
+                  ],
+                },
+                {
+                  name: "Family",
+                  children: [
+                    {
+                      name: "Family",
+                      value: 396,
+                    },
+                    {
+                      name: "Kids",
+                      value: 28,
+                    },
+                  ],
+                },
+                {
+                  name: "Music",
+                  children: [
+                    {
+                      name: "Dance",
+                      value: 4,
+                    },
+                    {
+                      name: "Music",
+                      value: 56,
+                    },
+                  ],
+                },
+                {
+                  name: "Reality & Variety",
+                  children: [
+                    {
+                      name: "Reality",
+                      value: 2,
+                    },
+                    {
+                      name: "Variety",
+                      value: 2,
+                    },
+                  ],
+                },
+                {
+                  name: "Romance",
+                  children: [
+                    {
+                      name: "Romance",
+                      value: 12,
+                    },
+                    {
+                      name: "Romantic Comedies",
+                      value: 2,
+                    },
+                  ],
+                },
+                {
+                  name: "Sci-Fi & Fantasy",
+                  children: [
+                    {
+                      name: "Fantasy",
+                      value: 102,
+                    },
+                    {
+                      name: "Sci-Fi & Fantasy",
+                      value: 36,
+                    },
+                  ],
+                },
+                {
+                  name: "Sports",
+                  children: [
+                    {
+                      name: "Sports",
+                      value: 32,
+                    },
+                  ],
+                },
+                {
+                  name: "Superhero",
+                  children: [
+                    {
+                      name: "Superhero",
+                      value: 1,
+                    },
+                  ],
+                },
+                {
+                  name: "Thriller",
+                  children: [
+                    {
+                      name: "Crime",
+                      value: 13,
+                    },
+                    {
+                      name: "Disaster",
+                      value: 2,
+                    },
+                    {
+                      name: "Mystery",
+                      value: 7,
+                    },
+                    {
+                      name: "Spy/Espionage",
+                      value: 1,
+                    },
+                    {
+                      name: "Thriller",
+                      value: 2,
+                    },
+                  ],
+                },
+                {
+                  name: "Western",
+                  children: [
+                    {
+                      name: "Western",
+                      value: 5,
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              name: "Hulu",
+              children: [
+                {
+                  name: "Action & Adventure",
+                  children: [
+                    {
+                      name: "Action",
+                      value: 129,
+                    },
+                    {
+                      name: "Adventure",
+                      value: 120,
+                    },
+                  ],
+                },
+                {
+                  name: "Animation",
+                  children: [
+                    {
+                      name: "Anime",
+                      value: 2,
+                    },
+                    {
+                      name: "Cartoons",
+                      value: 4,
+                    },
+                  ],
+                },
+                {
+                  name: "Comedy",
+                  children: [
+                    {
+                      name: "Comedies",
+                      value: 173,
+                    },
+                    {
+                      name: "Stand Up",
+                      value: 2,
+                    },
+                  ],
+                },
+                {
+                  name: "Documentary",
+                  children: [
+                    {
+                      name: "Black Stories",
+                      value: 40,
+                    },
+                    {
+                      name: "Documentaries",
+                      value: 121,
+                    },
+                    {
+                      name: "History",
+                      value: 22,
+                    },
+                    {
+                      name: "Science & Technology",
+                      value: 5,
+                    },
+                  ],
+                },
+                {
+                  name: "Drama",
+                  children: [
+                    {
+                      name: "Classic Movies",
+                      value: 7,
+                    },
+                    {
+                      name: "Drama",
+                      value: 286,
+                    },
+                  ],
+                },
+                {
+                  name: "Family",
+                  children: [
+                    {
+                      name: "Family",
+                      value: 27,
+                    },
+                    {
+                      name: "Kids",
+                      value: 21,
+                    },
+                    {
+                      name: "Teen",
+                      value: 1,
+                    },
+                  ],
+                },
+                {
+                  name: "Horror",
+                  children: [
+                    {
+                      name: "Horror",
+                      value: 139,
+                    },
+                  ],
+                },
+                {
+                  name: "International",
+                  children: [
+                    {
+                      name: "International",
+                      value: 22,
+                    },
+                  ],
+                },
+                {
+                  name: "Music",
+                  children: [
+                    {
+                      name: "Music",
+                      value: 35,
+                    },
+                  ],
+                },
+                {
+                  name: "Reality & Variety",
+                  children: [
+                    {
+                      name: "Adult Animation",
+                      value: 1,
+                    },
+                    {
+                      name: "LGBTQ",
+                      value: 43,
+                    },
+                    {
+                      name: "Lifestyle & Culture",
+                      value: 1,
+                    },
+                    {
+                      name: "News",
+                      value: 4,
+                    },
+                  ],
+                },
+                {
+                  name: "Romance",
+                  children: [
+                    {
+                      name: "Romance",
+                      value: 76,
+                    },
+                  ],
+                },
+                {
+                  name: "Sci-Fi & Fantasy",
+                  children: [
+                    {
+                      name: "Sci-Fi & Fantasy",
+                      value: 41,
+                    },
+                  ],
+                },
+                {
+                  name: "Sports",
+                  children: [
+                    {
+                      name: "Sports",
+                      value: 6,
+                    },
+                  ],
+                },
+                {
+                  name: "Thriller",
+                  children: [
+                    {
+                      name: "Crime",
+                      value: 43,
+                    },
+                    {
+                      name: "Mystery",
+                      value: 24,
+                    },
+                    {
+                      name: "Thriller",
+                      value: 104,
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              name: "Netflix",
+              children: [
+                {
+                  name: "Action & Adventure",
+                  children: [
+                    {
+                      name: "Action & Adventure",
+                      value: 441,
+                    },
+                  ],
+                },
+                {
+                  name: "Animation",
+                  children: [
+                    {
+                      name: "Anime",
+                      value: 30,
+                    },
+                  ],
+                },
+                {
+                  name: "Comedy",
+                  children: [
+                    {
+                      name: "Comedies",
+                      value: 944,
+                    },
+                    {
+                      name: "Stand Up",
+                      value: 248,
+                    },
+                  ],
+                },
+                {
+                  name: "Documentary",
+                  children: [
+                    {
+                      name: "Documentaries",
+                      value: 381,
+                    },
+                  ],
+                },
+                {
+                  name: "Drama",
+                  children: [
+                    {
+                      name: "Classic Movies",
+                      value: 27,
+                    },
+                    {
+                      name: "Cult Movies",
+                      value: 25,
+                    },
+                    {
+                      name: "Drama",
+                      value: 1402,
+                    },
+                    {
+                      name: "Independent Movies",
+                      value: 414,
+                    },
+                  ],
+                },
+                {
+                  name: "Family",
+                  children: [
+                    {
+                      name: "Children & Family Movies",
+                      value: 308,
+                    },
+                  ],
+                },
+                {
+                  name: "Horror",
+                  children: [
+                    {
+                      name: "Horror",
+                      value: 168,
+                    },
+                  ],
+                },
+                {
+                  name: "International",
+                  children: [
+                    {
+                      name: "International",
+                      value: 1533,
+                    },
+                  ],
+                },
+                {
+                  name: "Music",
+                  children: [
+                    {
+                      name: "Music",
+                      value: 194,
+                    },
+                  ],
+                },
+                {
+                  name: "Reality & Variety",
+                  children: [
+                    {
+                      name: "Faith & Spirituality",
+                      value: 32,
+                    },
+                    {
+                      name: "LGBTQ",
+                      value: 58,
+                    },
+                  ],
+                },
+                {
+                  name: "Romance",
+                  children: [
+                    {
+                      name: "Romance",
+                      value: 370,
+                    },
+                  ],
+                },
+                {
+                  name: "Sci-Fi & Fantasy",
+                  children: [
+                    {
+                      name: "Sci-Fi & Fantasy",
+                      value: 118,
+                    },
+                  ],
+                },
+                {
+                  name: "Sports",
+                  children: [
+                    {
+                      name: "Sports",
+                      value: 109,
+                    },
+                  ],
+                },
+                {
+                  name: "Thriller",
+                  children: [
+                    {
+                      name: "Thriller",
+                      value: 315,
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ];
+
+      // create a chart and set the data
+      var chart = anychart.sunburst(data, "as-tree");
+
+      // set the calculation mode
+      chart.calculationMode("parent-independent");
+
+      // create and configure a label
+      var label = anychart.standalones.label();
+      label.text("Company Structure");
+      label.width("100%");
+      label.height("100%");
+      label.fontColor("#dd2c00");
+      label.fontSize(12);
+      label.fontWeight(600);
+      label.hAlign("center");
+      label.vAlign("middle");
+
+      // set the radius
+      chart.radius("30%");
+
+      // set the inner radius
+      // chart.innerRadius(20);
+
+      // // set the center content
+      // chart.center().content(label);
+
+      // set the container id
+      chart.container("container");
+
+      // initiate drawing the chart
+      chart.draw();
+
+      document.getElementById("container").appendChild(chart);
+    </script>
+  </body>
+</html>
