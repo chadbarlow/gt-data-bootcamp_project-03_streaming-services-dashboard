@@ -1,728 +1,724 @@
+
 {
-  "name": "flare",
+  "name": "Amazon Prime",
   "children": [
     {
-      "name": "Amazon Prime",
+      "name": "Action & Adventure",
       "children": [
         {
-          "name": "Action & Adventure",
-          "children": [
-            {
-              "name": "Action",
-              "size": 470
-            },
-            {
-              "name": "Adventure",
-              "size": 109
-            }
-          ]
+          "name": "Action",
+          "size": 470
         },
         {
-          "name": "Animation",
-          "children": [
-            {
-              "name": "Animation",
-              "size": 28
-            },
-            {
-              "name": "Anime",
-              "size": 1
-            }
-          ]
-        },
-        {
-          "name": "Comedy",
-          "children": [
-            {
-              "name": "Comedies",
-              "size": 606
-            }
-          ]
-        },
-        {
-          "name": "Documentary",
-          "children": [
-            {
-              "name": "Arts",
-              "size": 163
-            },
-            {
-              "name": "Documentaries",
-              "size": 207
-            },
-            {
-              "name": "History",
-              "size": 8
-            },
-            {
-              "name": "Military and War",
-              "size": 18
-            }
-          ]
-        },
-        {
-          "name": "Drama",
-          "children": [
-            {
-              "name": "Arthouse",
-              "size": 50
-            },
-            {
-              "name": "Drama",
-              "size": 1001
-            }
-          ]
-        },
-        {
-          "name": "Family",
-          "children": [
-            {
-              "name": "Kids",
-              "size": 101
-            },
-            {
-              "name": "Teen",
-              "size": 39
-            }
-          ]
-        },
-        {
-          "name": "Horror",
-          "children": [
-            {
-              "name": "Horror",
-              "size": 266
-            }
-          ]
-        },
-        {
-          "name": "International",
-          "children": [
-            {
-              "name": "International",
-              "size": 123
-            }
-          ]
-        },
-        {
-          "name": "Music",
-          "children": [
-            {
-              "name": "Music",
-              "size": 13
-            }
-          ]
-        },
-        {
-          "name": "Reality & Variety",
-          "children": [
-            {
-              "name": "Entertainment",
-              "size": 163
-            },
-            {
-              "name": "Faith & Spirituality",
-              "size": 21
-            },
-            {
-              "name": "LGBTQ",
-              "size": 45
-            },
-            {
-              "name": "Special Interest",
-              "size": 192
-            }
-          ]
-        },
-        {
-          "name": "Romance",
-          "children": [
-            {
-              "name": "Romance",
-              "size": 172
-            }
-          ]
-        },
-        {
-          "name": "Sci-Fi & Fantasy",
-          "children": [
-            {
-              "name": "Fantasy",
-              "size": 25
-            },
-            {
-              "name": "Sci-Fi & Fantasy",
-              "size": 144
-            }
-          ]
-        },
-        {
-          "name": "Sports",
-          "children": [
-            {
-              "name": "Sports",
-              "size": 44
-            }
-          ]
-        },
-        {
-          "name": "Thriller",
-          "children": [
-            {
-              "name": "Suspense",
-              "size": 481
-            }
-          ]
-        },
-        {
-          "name": "Western",
-          "children": [
-            {
-              "name": "Western",
-              "size": 95
-            }
-          ]
+          "name": "Adventure",
+          "size": 109
         }
       ]
     },
     {
-      "name": "Disney Plus",
+      "name": "Animation",
       "children": [
         {
-          "name": "Action & Adventure",
-          "children": [
-            {
-              "name": "Action & Adventure",
-              "size": 217
-            }
-          ]
-        },
-        {
           "name": "Animation",
-          "children": [
-            {
-              "name": "Animation",
-              "size": 270
-            }
-          ]
+          "size": 28
         },
         {
-          "name": "Comedy",
-          "children": [
-            {
-              "name": "Buddy",
-              "size": 20
-            },
-            {
-              "name": "Comedies",
-              "size": 289
-            },
-            {
-              "name": "Parody",
-              "size": 2
-            },
-            {
-              "name": "Survival",
-              "size": 1
-            }
-          ]
+          "name": "Anime",
+          "size": 1
+        }
+      ]
+    },
+    {
+      "name": "Comedy",
+      "children": [
+        {
+          "name": "Comedies",
+          "size": 606
+        }
+      ]
+    },
+    {
+      "name": "Documentary",
+      "children": [
+        {
+          "name": "Arts",
+          "size": 163
         },
         {
-          "name": "Documentary",
-          "children": [
-            {
-              "name": "Animals & Nature",
-              "size": 102
-            },
-            {
-              "name": "Biographical",
-              "size": 32
-            },
-            {
-              "name": "Documentaries",
-              "size": 117
-            },
-            {
-              "name": "History",
-              "size": 29
-            },
-            {
-              "name": "Medical",
-              "size": 2
-            }
-          ]
+          "name": "Documentaries",
+          "size": 207
+        },
+        {
+          "name": "History",
+          "size": 8
+        },
+        {
+          "name": "Military and War",
+          "size": 18
+        }
+      ]
+    },
+    {
+      "name": "Drama",
+      "children": [
+        {
+          "name": "Arthouse",
+          "size": 50
         },
         {
           "name": "Drama",
-          "children": [
-            {
-              "name": "Anthology",
-              "size": 6
-            },
-            {
-              "name": "Coming of Age",
-              "size": 120
-            },
-            {
-              "name": "Drama",
-              "size": 98
-            }
-          ]
+          "size": 1001
+        }
+      ]
+    },
+    {
+      "name": "Family",
+      "children": [
+        {
+          "name": "Kids",
+          "size": 101
         },
         {
-          "name": "Family",
-          "children": [
-            {
-              "name": "Family",
-              "size": 396
-            },
-            {
-              "name": "Kids",
-              "size": 28
-            }
-          ]
-        },
+          "name": "Teen",
+          "size": 39
+        }
+      ]
+    },
+    {
+      "name": "Horror",
+      "children": [
+        {
+          "name": "Horror",
+          "size": 266
+        }
+      ]
+    },
+    {
+      "name": "International",
+      "children": [
+        {
+          "name": "International",
+          "size": 123
+        }
+      ]
+    },
+    {
+      "name": "Music",
+      "children": [
         {
           "name": "Music",
-          "children": [
-            {
-              "name": "Dance",
-              "size": 4
-            },
-            {
-              "name": "Music",
-              "size": 56
-            }
-          ]
+          "size": 13
+        }
+      ]
+    },
+    {
+      "name": "Reality & Variety",
+      "children": [
+        {
+          "name": "Entertainment",
+          "size": 163
         },
         {
-          "name": "Reality & Variety",
-          "children": [
-            {
-              "name": "Reality",
-              "size": 2
-            },
-            {
-              "name": "Variety",
-              "size": 2
-            }
-          ]
+          "name": "Faith & Spirituality",
+          "size": 21
         },
+        {
+          "name": "LGBTQ",
+          "size": 45
+        },
+        {
+          "name": "Special Interest",
+          "size": 192
+        }
+      ]
+    },
+    {
+      "name": "Romance",
+      "children": [
         {
           "name": "Romance",
-          "children": [
-            {
-              "name": "Romance",
-              "size": 12
-            },
-            {
-              "name": "Romantic Comedies",
-              "size": 2
-            }
-          ]
+          "size": 172
+        }
+      ]
+    },
+    {
+      "name": "Sci-Fi & Fantasy",
+      "children": [
+        {
+          "name": "Fantasy",
+          "size": 25
         },
         {
           "name": "Sci-Fi & Fantasy",
-          "children": [
-            {
-              "name": "Fantasy",
-              "size": 102
-            },
-            {
-              "name": "Sci-Fi & Fantasy",
-              "size": 36
-            }
-          ]
-        },
+          "size": 144
+        }
+      ]
+    },
+    {
+      "name": "Sports",
+      "children": [
         {
           "name": "Sports",
-          "children": [
-            {
-              "name": "Sports",
-              "size": 32
-            }
-          ]
+          "size": 44
+        }
+      ]
+    },
+    {
+      "name": "Thriller",
+      "children": [
+        {
+          "name": "Suspense",
+          "size": 481
+        }
+      ]
+    },
+    {
+      "name": "Western",
+      "children": [
+        {
+          "name": "Western",
+          "size": 95
+        }
+      ]
+    }
+  ]
+},
+{
+  "name": "Disney Plus",
+  "children": [
+    {
+      "name": "Action & Adventure",
+      "children": [
+        {
+          "name": "Action & Adventure",
+          "size": 217
+        }
+      ]
+    },
+    {
+      "name": "Animation",
+      "children": [
+        {
+          "name": "Animation",
+          "size": 270
+        }
+      ]
+    },
+    {
+      "name": "Comedy",
+      "children": [
+        {
+          "name": "Buddy",
+          "size": 20
         },
+        {
+          "name": "Comedies",
+          "size": 289
+        },
+        {
+          "name": "Parody",
+          "size": 2
+        },
+        {
+          "name": "Survival",
+          "size": 1
+        }
+      ]
+    },
+    {
+      "name": "Documentary",
+      "children": [
+        {
+          "name": "Animals & Nature",
+          "size": 102
+        },
+        {
+          "name": "Biographical",
+          "size": 32
+        },
+        {
+          "name": "Documentaries",
+          "size": 117
+        },
+        {
+          "name": "History",
+          "size": 29
+        },
+        {
+          "name": "Medical",
+          "size": 2
+        }
+      ]
+    },
+    {
+      "name": "Drama",
+      "children": [
+        {
+          "name": "Anthology",
+          "size": 6
+        },
+        {
+          "name": "Coming of Age",
+          "size": 120
+        },
+        {
+          "name": "Drama",
+          "size": 98
+        }
+      ]
+    },
+    {
+      "name": "Family",
+      "children": [
+        {
+          "name": "Family",
+          "size": 396
+        },
+        {
+          "name": "Kids",
+          "size": 28
+        }
+      ]
+    },
+    {
+      "name": "Music",
+      "children": [
+        {
+          "name": "Dance",
+          "size": 4
+        },
+        {
+          "name": "Music",
+          "size": 56
+        }
+      ]
+    },
+    {
+      "name": "Reality & Variety",
+      "children": [
+        {
+          "name": "Reality",
+          "size": 2
+        },
+        {
+          "name": "Variety",
+          "size": 2
+        }
+      ]
+    },
+    {
+      "name": "Romance",
+      "children": [
+        {
+          "name": "Romance",
+          "size": 12
+        },
+        {
+          "name": "Romantic Comedies",
+          "size": 2
+        }
+      ]
+    },
+    {
+      "name": "Sci-Fi & Fantasy",
+      "children": [
+        {
+          "name": "Fantasy",
+          "size": 102
+        },
+        {
+          "name": "Sci-Fi & Fantasy",
+          "size": 36
+        }
+      ]
+    },
+    {
+      "name": "Sports",
+      "children": [
+        {
+          "name": "Sports",
+          "size": 32
+        }
+      ]
+    },
+    {
+      "name": "Superhero",
+      "children": [
         {
           "name": "Superhero",
-          "children": [
-            {
-              "name": "Superhero",
-              "size": 1
-            }
-          ]
+          "size": 1
+        }
+      ]
+    },
+    {
+      "name": "Thriller",
+      "children": [
+        {
+          "name": "Crime",
+          "size": 13
+        },
+        {
+          "name": "Disaster",
+          "size": 2
+        },
+        {
+          "name": "Mystery",
+          "size": 7
+        },
+        {
+          "name": "Spy/Espionage",
+          "size": 1
         },
         {
           "name": "Thriller",
-          "children": [
-            {
-              "name": "Crime",
-              "size": 13
-            },
-            {
-              "name": "Disaster",
-              "size": 2
-            },
-            {
-              "name": "Mystery",
-              "size": 7
-            },
-            {
-              "name": "Spy/Espionage",
-              "size": 1
-            },
-            {
-              "name": "Thriller",
-              "size": 2
-            }
-          ]
-        },
+          "size": 2
+        }
+      ]
+    },
+    {
+      "name": "Western",
+      "children": [
         {
           "name": "Western",
-          "children": [
-            {
-              "name": "Western",
-              "size": 5
-            }
-          ]
+          "size": 5
+        }
+      ]
+    }
+  ]
+},
+{
+  "name": "Hulu",
+  "children": [
+    {
+      "name": "Action & Adventure",
+      "children": [
+        {
+          "name": "Action",
+          "size": 129
+        },
+        {
+          "name": "Adventure",
+          "size": 120
         }
       ]
     },
     {
-      "name": "Hulu",
+      "name": "Animation",
       "children": [
         {
-          "name": "Action & Adventure",
-          "children": [
-            {
-              "name": "Action",
-              "size": 129
-            },
-            {
-              "name": "Adventure",
-              "size": 120
-            }
-          ]
+          "name": "Anime",
+          "size": 2
         },
         {
-          "name": "Animation",
-          "children": [
-            {
-              "name": "Anime",
-              "size": 2
-            },
-            {
-              "name": "Cartoons",
-              "size": 4
-            }
-          ]
-        },
-        {
-          "name": "Comedy",
-          "children": [
-            {
-              "name": "Comedies",
-              "size": 173
-            },
-            {
-              "name": "Stand Up",
-              "size": 2
-            }
-          ]
-        },
-        {
-          "name": "Documentary",
-          "children": [
-            {
-              "name": "Black Stories",
-              "size": 40
-            },
-            {
-              "name": "Documentaries",
-              "size": 121
-            },
-            {
-              "name": "History",
-              "size": 22
-            },
-            {
-              "name": "Science & Technology",
-              "size": 5
-            }
-          ]
-        },
-        {
-          "name": "Drama",
-          "children": [
-            {
-              "name": "Classic Movies",
-              "size": 7
-            },
-            {
-              "name": "Drama",
-              "size": 286
-            }
-          ]
-        },
-        {
-          "name": "Family",
-          "children": [
-            {
-              "name": "Family",
-              "size": 27
-            },
-            {
-              "name": "Kids",
-              "size": 21
-            },
-            {
-              "name": "Teen",
-              "size": 1
-            }
-          ]
-        },
-        {
-          "name": "Horror",
-          "children": [
-            {
-              "name": "Horror",
-              "size": 139
-            }
-          ]
-        },
-        {
-          "name": "International",
-          "children": [
-            {
-              "name": "International",
-              "size": 22
-            }
-          ]
-        },
-        {
-          "name": "Music",
-          "children": [
-            {
-              "name": "Music",
-              "size": 35
-            }
-          ]
-        },
-        {
-          "name": "Reality & Variety",
-          "children": [
-            {
-              "name": "Adult Animation",
-              "size": 1
-            },
-            {
-              "name": "LGBTQ",
-              "size": 43
-            },
-            {
-              "name": "Lifestyle & Culture",
-              "size": 1
-            },
-            {
-              "name": "News",
-              "size": 4
-            }
-          ]
-        },
-        {
-          "name": "Romance",
-          "children": [
-            {
-              "name": "Romance",
-              "size": 76
-            }
-          ]
-        },
-        {
-          "name": "Sci-Fi & Fantasy",
-          "children": [
-            {
-              "name": "Sci-Fi & Fantasy",
-              "size": 41
-            }
-          ]
-        },
-        {
-          "name": "Sports",
-          "children": [
-            {
-              "name": "Sports",
-              "size": 6
-            }
-          ]
-        },
-        {
-          "name": "Thriller",
-          "children": [
-            {
-              "name": "Crime",
-              "size": 43
-            },
-            {
-              "name": "Mystery",
-              "size": 24
-            },
-            {
-              "name": "Thriller",
-              "size": 104
-            }
-          ]
+          "name": "Cartoons",
+          "size": 4
         }
       ]
     },
     {
-      "name": "Netflix",
+      "name": "Comedy",
       "children": [
         {
-          "name": "Action & Adventure",
-          "children": [
-            {
-              "name": "Action & Adventure",
-              "size": 441
-            }
-          ]
+          "name": "Comedies",
+          "size": 173
         },
         {
-          "name": "Animation",
-          "children": [
-            {
-              "name": "Anime",
-              "size": 30
-            }
-          ]
+          "name": "Stand Up",
+          "size": 2
+        }
+      ]
+    },
+    {
+      "name": "Documentary",
+      "children": [
+        {
+          "name": "Black Stories",
+          "size": 40
         },
         {
-          "name": "Comedy",
-          "children": [
-            {
-              "name": "Comedies",
-              "size": 944
-            },
-            {
-              "name": "Stand Up",
-              "size": 248
-            }
-          ]
+          "name": "Documentaries",
+          "size": 121
         },
         {
-          "name": "Documentary",
-          "children": [
-            {
-              "name": "Documentaries",
-              "size": 381
-            }
-          ]
+          "name": "History",
+          "size": 22
+        },
+        {
+          "name": "Science & Technology",
+          "size": 5
+        }
+      ]
+    },
+    {
+      "name": "Drama",
+      "children": [
+        {
+          "name": "Classic Movies",
+          "size": 7
         },
         {
           "name": "Drama",
-          "children": [
-            {
-              "name": "Classic Movies",
-              "size": 27
-            },
-            {
-              "name": "Cult Movies",
-              "size": 25
-            },
-            {
-              "name": "Drama",
-              "size": 1402
-            },
-            {
-              "name": "Independent Movies",
-              "size": 414
-            }
-          ]
-        },
+          "size": 286
+        }
+      ]
+    },
+    {
+      "name": "Family",
+      "children": [
         {
           "name": "Family",
-          "children": [
-            {
-              "name": "Children & Family Movies",
-              "size": 308
-            }
-          ]
+          "size": 27
         },
+        {
+          "name": "Kids",
+          "size": 21
+        },
+        {
+          "name": "Teen",
+          "size": 1
+        }
+      ]
+    },
+    {
+      "name": "Horror",
+      "children": [
         {
           "name": "Horror",
-          "children": [
-            {
-              "name": "Horror",
-              "size": 168
-            }
-          ]
-        },
+          "size": 139
+        }
+      ]
+    },
+    {
+      "name": "International",
+      "children": [
         {
           "name": "International",
-          "children": [
-            {
-              "name": "International",
-              "size": 1533
-            }
-          ]
-        },
+          "size": 22
+        }
+      ]
+    },
+    {
+      "name": "Music",
+      "children": [
         {
           "name": "Music",
-          "children": [
-            {
-              "name": "Music",
-              "size": 194
-            }
-          ]
+          "size": 35
+        }
+      ]
+    },
+    {
+      "name": "Reality & Variety",
+      "children": [
+        {
+          "name": "Adult Animation",
+          "size": 1
         },
         {
-          "name": "Reality & Variety",
-          "children": [
-            {
-              "name": "Faith & Spirituality",
-              "size": 32
-            },
-            {
-              "name": "LGBTQ",
-              "size": 58
-            }
-          ]
+          "name": "LGBTQ",
+          "size": 43
         },
+        {
+          "name": "Lifestyle & Culture",
+          "size": 1
+        },
+        {
+          "name": "News",
+          "size": 4
+        }
+      ]
+    },
+    {
+      "name": "Romance",
+      "children": [
         {
           "name": "Romance",
-          "children": [
-            {
-              "name": "Romance",
-              "size": 370
-            }
-          ]
-        },
+          "size": 76
+        }
+      ]
+    },
+    {
+      "name": "Sci-Fi & Fantasy",
+      "children": [
         {
           "name": "Sci-Fi & Fantasy",
-          "children": [
-            {
-              "name": "Sci-Fi & Fantasy",
-              "size": 118
-            }
-          ]
-        },
+          "size": 41
+        }
+      ]
+    },
+    {
+      "name": "Sports",
+      "children": [
         {
           "name": "Sports",
-          "children": [
-            {
-              "name": "Sports",
-              "size": 109
-            }
-          ]
+          "size": 6
+        }
+      ]
+    },
+    {
+      "name": "Thriller",
+      "children": [
+        {
+          "name": "Crime",
+          "size": 43
+        },
+        {
+          "name": "Mystery",
+          "size": 24
         },
         {
           "name": "Thriller",
-          "children": [
-            {
-              "name": "Thriller",
-              "size": 315
-            }
-          ]
+          "size": 104
+        }
+      ]
+    }
+  ]
+},
+{
+  "name": "Netflix",
+  "children": [
+    {
+      "name": "Action & Adventure",
+      "children": [
+        {
+          "name": "Action & Adventure",
+          "size": 441
+        }
+      ]
+    },
+    {
+      "name": "Animation",
+      "children": [
+        {
+          "name": "Anime",
+          "size": 30
+        }
+      ]
+    },
+    {
+      "name": "Comedy",
+      "children": [
+        {
+          "name": "Comedies",
+          "size": 944
+        },
+        {
+          "name": "Stand Up",
+          "size": 248
+        }
+      ]
+    },
+    {
+      "name": "Documentary",
+      "children": [
+        {
+          "name": "Documentaries",
+          "size": 381
+        }
+      ]
+    },
+    {
+      "name": "Drama",
+      "children": [
+        {
+          "name": "Classic Movies",
+          "size": 27
+        },
+        {
+          "name": "Cult Movies",
+          "size": 25
+        },
+        {
+          "name": "Drama",
+          "size": 1402
+        },
+        {
+          "name": "Independent Movies",
+          "size": 414
+        }
+      ]
+    },
+    {
+      "name": "Family",
+      "children": [
+        {
+          "name": "Children & Family Movies",
+          "size": 308
+        }
+      ]
+    },
+    {
+      "name": "Horror",
+      "children": [
+        {
+          "name": "Horror",
+          "size": 168
+        }
+      ]
+    },
+    {
+      "name": "International",
+      "children": [
+        {
+          "name": "International",
+          "size": 1533
+        }
+      ]
+    },
+    {
+      "name": "Music",
+      "children": [
+        {
+          "name": "Music",
+          "size": 194
+        }
+      ]
+    },
+    {
+      "name": "Reality & Variety",
+      "children": [
+        {
+          "name": "Faith & Spirituality",
+          "size": 32
+        },
+        {
+          "name": "LGBTQ",
+          "size": 58
+        }
+      ]
+    },
+    {
+      "name": "Romance",
+      "children": [
+        {
+          "name": "Romance",
+          "size": 370
+        }
+      ]
+    },
+    {
+      "name": "Sci-Fi & Fantasy",
+      "children": [
+        {
+          "name": "Sci-Fi & Fantasy",
+          "size": 118
+        }
+      ]
+    },
+    {
+      "name": "Sports",
+      "children": [
+        {
+          "name": "Sports",
+          "size": 109
+        }
+      ]
+    },
+    {
+      "name": "Thriller",
+      "children": [
+        {
+          "name": "Thriller",
+          "size": 315
         }
       ]
     }
