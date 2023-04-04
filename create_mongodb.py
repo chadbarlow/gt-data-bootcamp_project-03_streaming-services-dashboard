@@ -15,6 +15,10 @@ def create_db():
     df_horizontal.index = df_horizontal.index.map(str)
     df_vertical.index = df_vertical.index.map(str)
 
+    # Nan to None for proper JSON specs
+    df_horizontal = df_horizontal.where(df_horizontal.notna(), None)
+    df_vertical = df_vertical.where(df_vertical.notna(), None)
+
     # new variable of df that converts data to dictionary
     # where each row is its own dictionary (orient="records")
     # list of dictionaries
