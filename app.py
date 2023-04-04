@@ -17,8 +17,8 @@ mongo = PyMongo(app)
 def home():
     create_mongodb.create_db()
     #first document in the collection
-    first_record = mongo.db.streamHorizontal.find_one()
-    return render_template("index.html", first_record=first_record)
+    #first_record = mongo.db.streamHorizontal.find_one()
+    return render_template("index_flask.html")
 # after the source file is where the {{variable}} from the html is being set to
 
 @app.route("/get_horizontal")
@@ -26,9 +26,11 @@ def get_horizontal():
     # variable to find all data in streamData collection
     mongo_horizontal = mongo.db.streamHorizontal.find()
     #empty list to be transformed into json object
-    json_horizontal = []
+    json_horizontal = {}
     for all in mongo_horizontal:
-        json_horizontal.append(all)
+        json_horizontal.update(all)
+    # remove mongo created id
+    del json_horizontal["_id"]
     # converting mongo encoding to json
     json_horizontal = json.dumps(json_horizontal, default=json_util.default)
     return json_horizontal
@@ -38,9 +40,11 @@ def get_vertical():
     # variable to find all data in streamData collection
     mongo_vertical = mongo.db.streamVertical.find()
     #empty list to be transformed into json object
-    json_vertical = []
+    json_vertical = {}
     for all in mongo_vertical:
-        json_vertical.append(all)
+        json_vertical.update(all)
+    # remove mongo created id
+    del json_vertical["_id"]
     # converting mongo encoding to json
     json_vertical = json.dumps(json_vertical, default=json_util.default)
     return json_vertical

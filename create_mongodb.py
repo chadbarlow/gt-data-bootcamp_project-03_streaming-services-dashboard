@@ -8,20 +8,18 @@ def create_db():
     client = pymongo.MongoClient("mongodb://localhost:27017")
 
     # read in csv file as dataframe
-    df_horizontal = pd.read_csv("static/etl/csv/complete_horizontal.csv")
-    df_vertical = pd.read_csv("static/etl/csv/complete_vertical.csv")
+    df_horizontal = pd.read_csv("static/etl/csv/complete_data/complete_horizontal.csv")
+    df_vertical = pd.read_csv("static/etl/csv/complete_data/complete_vertical.csv")
 
-    # rename columns to 1 word strings for proper mongo keys
-    # df = df.rename(columns={"Rotten Tomatoes Score": "Score",
-    #                         "Date Added": "Added",
-    #                         "Release Year": "Release",
-    #                         })
+    # map index to string for bson compatibility
+    df_horizontal.index = df_horizontal.index.map(str)
+    df_vertical.index = df_vertical.index.map(str)
 
     # new variable of df that converts data to dictionary
     # where each row is its own dictionary (orient="records")
     # list of dictionaries
-    data_horizontal = df_horizontal.to_dict(orient="records")
-    data_vertical = df_vertical.to_dict(orient="records")
+    data_horizontal = df_horizontal.to_dict(orient="index")
+    data_vertical = df_vertical.to_dict(orient="index")
 
     # connect to db, one will be created if it does not exist yet
     db = client["streamTest"]
@@ -38,6 +36,6 @@ def create_db():
 
     # create streamData collection and insert data
     # db.streamData.insert_many(data)
-    db.streamHorizontal.insert_many(data_horizontal)
+    db.streamHorizontal.insert_one(data_horizontal)
 
-    db.streamVertical.insert_many(data_vertical)
+    db.streamVertical.insert_one(data_vertical)
