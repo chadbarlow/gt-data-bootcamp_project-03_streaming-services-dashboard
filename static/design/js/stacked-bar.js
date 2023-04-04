@@ -2,7 +2,7 @@ function main() {
   let selector = d3.select('#selDataset');
   platformNames = ['Netflix', 'Hulu', 'Disney Plus', 'Amazon Prime'];
   d3.json('../static/etl/json/complete_vertical.json').then((data) => {
-    // console.log(data[0].added.substring(0,4));    
+    //console.log(data[0].added.substring(0,4));    
     platformNames.forEach(element => {
       selector.append('option').text(element).property('value', element);
 
