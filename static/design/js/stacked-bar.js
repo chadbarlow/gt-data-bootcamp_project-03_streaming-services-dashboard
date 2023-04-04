@@ -1,7 +1,7 @@
 function main() {
   let selector = d3.select('#selDataset');
-  platformNames = ['Netflix', 'Hulu', 'Disney Plus', 'Amazon Prime'];
-  d3.json('../static/etl/json/complete_vertical.json').then((data) => {
+  platformNames = ['Netflix', 'Hulu', 'Disney Plus'];
+  d3.json('/get_vertical').then((data) => {
     // console.log(data[0].added.substring(0,4));    
     platformNames.forEach(element => {
       selector.append('option').text(element).property('value', element);
@@ -46,7 +46,7 @@ function buildCharts(platform) {
   let filters= {};
   let topFive = ['Drama', 'Comedies', 'International', 'Action & Adventure', 'Horror & Suspense'];
   let graph_dict= {};
-  d3.json('complete_vertical.json').then((json_data) => {
+  d3.json('/get_vertical').then((json_data) => {
     Object.keys(json_data).forEach((key) => {
           if(json_data[key].platform == platform && topFive.includes(json_data[key].listed_in))
           {
@@ -123,6 +123,7 @@ function buildCharts(platform) {
             y: drama,
             name: 'Drama',
             type: 'bar',
+            // marker: {color: 'black'}
             
           };
           
@@ -163,7 +164,7 @@ function buildCharts(platform) {
           
           var layout = {barmode: 'stack'};
           
-          Plotly.newPlot('bar', data, layout);
+          Plotly.newPlot('stacked-bar', data, layout);
 
           
         
@@ -173,54 +174,4 @@ function buildCharts(platform) {
   
   
   )};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function worldCloud(platform) {
-//   d3.json('complete_vertical.json').then((json_data) => {
-//     // Grab json data
-//     let data = json_data;
-//     // console.log(data);
-//     let words = [];
-
-//     Object.keys(data).forEach((key) => {
-//       platformArray = data[key]['platform'] == 'Netflix'
-//     words.push(data[key]['description'].split(' '));
-//     console.log(words);
-//   })
-
-// })}
 
