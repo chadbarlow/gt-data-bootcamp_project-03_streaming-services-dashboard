@@ -28,7 +28,7 @@ DASHBOARD
 
 Sunburst Chart
 
-To give you a breakdown of each platform by genre and sub-genre (including the number of movies each has as well) we present you with a sunburst chart. Click through and explore different options each platform has to offer! See if maybe a specific niche genre that you are interested in is represented by any platform on our dashboard. 
+To give you a breakdown of the platforms by genre and sub-genre (including the number of movies each has as well) we present you with a sunburst chart. Click through and explore different options of each platform! See if maybe a specific niche genre that you are interested in is represented and by which service. But be careful, those sunburst charts can be quite addictive! 
 
 screenshot
 
