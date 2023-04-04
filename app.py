@@ -18,7 +18,9 @@ def home():
     create_mongodb.create_db()
     #first document in the collection
     #first_record = mongo.db.streamHorizontal.find_one()
-    return render_template("index.html")
+
+    return render_template("index_flask.html")
+
 # after the source file is where the {{variable}} from the html is being set to
 
 @app.route("/get_horizontal")
@@ -49,9 +51,7 @@ def get_vertical():
     json_vertical = json.dumps(json_vertical, default=json_util.default)
     return json_vertical
 
-@app.route("/wheel")
-def wheel():
-    return render_template("wheel.html")
+
 
 # run webpage
 # set debug to True if you want server to auto reload code changes
