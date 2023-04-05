@@ -1,6 +1,8 @@
-# STREAMING SERVICES MOVIE DASHBOARD 
+<h1 align="center"> STREAMING SERVICES MOVIE DASHBOARD </h1> 
 
- ![movies](https://user-images.githubusercontent.com/74025870/229930895-1b2daead-6373-429c-8c29-d0d4ecf0374a.PNG)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/74025870/229930895-1b2daead-6373-429c-8c29-d0d4ecf0374a.PNG" alt="image"/>
+</p>
 
 ## Table of Contents
 1. [About](#about)
