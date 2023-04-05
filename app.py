@@ -23,6 +23,14 @@ def home():
 
 # after the source file is where the {{variable}} from the html is being set to
 
+@app.route("/wheel")
+def wheel():
+    return render_template("wheel_flask.html")
+
+@app.route("/team")
+def team():
+    return render_template("team_flask.html")
+
 @app.route("/get_horizontal")
 def get_horizontal():
     # variable to find all data in streamData collection
@@ -51,7 +59,19 @@ def get_vertical():
     json_vertical = json.dumps(json_vertical, default=json_util.default)
     return json_vertical
 
-
+@app.route("/get_sunburst")
+def get_sunburst():
+    # variable to find all data in streamData collection
+    mongo_vertical = mongo.db.streamSunburst.find({}, {"_id": 0})
+    #empty list to be transformed into json object
+    json_sunburst = []
+    for all in mongo_vertical:
+        json_sunburst.append(all)
+    # remove mongo created id
+    # del json_vertical["_id"]
+    # converting mongo encoding to json
+    json_sunburst = json.dumps(json_sunburst, default=json_util.default)
+    return json_sunburst
 
 # run webpage
 # set debug to True if you want server to auto reload code changes
