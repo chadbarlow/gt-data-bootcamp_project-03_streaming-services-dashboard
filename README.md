@@ -2,50 +2,68 @@
 
  ![movies](https://user-images.githubusercontent.com/74025870/229930895-1b2daead-6373-429c-8c29-d0d4ecf0374a.PNG)
 
+## Table of Contents
+1. [About](#about)
+2. [Requirements](#requirements)
+3. [Data Acquirement](#dataacq)
+4. [Data Cleaning](#dataclean)
+5. [Dashboard](#dashboard)
+6. [Sunburst Chart](#sun)
+7. [Curve Chart](#curve)
+8. [Rotten Tomato Bar Chart](#tomato)
+9. [Stacked Bar Chart](#stacked)
+10. [The Wheel](#wheel)
+11. [What's Next](#future)
+12. [Meat the Team](#team)
 
 
+<a name="about"></a>
 # ABOUT
 
 The rise of streaming technology changed a lot. There is no need to pay up to 100$ in costs for TV cable, the content has become more diverse, and there has even been a change in consumption habits of an audience. However, growing demand spawned so many options that choosing the platforms that suit your needs and desires the best AND staying within a budget can become a challenging task. Let’s break down four major movie streaming services and explore what they have to offer! 
 
-
+<a name="requirements"></a>
 ## Requirements 
 
 screenshot
 
+<a name="dataacq"></a>
 ## Data Acquirement
 
 Kaggle provided us with 4 datasets, one for each platform (Netflix, Hulu, Disney+, Prime Video), which we merged together. Each dataset contained the following information: movie title, genre, release date, added date, rating.
 Additionally, we cross-checked our merged dataset with the dataset that contained movies’ rotten tomato scores. Finally, we used ChatGPT API to re-assign genres and subgenres to each movie. 
 
+<a name="dataclean"></a>
 ## Data Cleaning
 
 Misko
 
 
-
+<a name="dashboard"></a>
 # DASHBOARD
 
+
+<a name="sun"></a>
 ## Sunburst Chart
 
 To give you a breakdown of the platforms by genre and sub-genre (including the number of movies each has as well) we present you with a sunburst chart. Click through and explore different options of each platform! See if maybe a specific niche genre that you are interested in is represented and by which service. But be careful, those sunburst charts can be quite addictive! 
 
 screenshot
 
-
+<a name="curve"></a>
 ## Overlapping Curve Chart
 
 
 screenshot
 
-
+<a name="tomato"></a>
 ## Rotten Tomato Bar Chart
 
 
 screenshot
 
 
-
+<a name="stacked"></a>
 ## Stacked Bar Chart
 
 We know, we know… those boring bar charts. But they are boring for a reason. They are used a lot since they are easy to read and understand. Hence, the bar chart! We explored the top-five most popular genres across all the platforms and dove into information of how well represented they are and how much content has been added for each of these genres since 2016. Now, two things to consider here. Amazon Prime didn’t release the information on added content through the years, and Disney Plus launched in 2019! Also, to keep our visuals informative and easy to read we didn’t normalize y-axis. 
@@ -54,7 +72,7 @@ We know, we know… those boring bar charts. But they are boring for a reason. T
 screenshot
 
 
-
+<a name="wheel"></a>
 # The Wheel 
 
 Exploring data and playing with charts is a lot of fun! But don’t think that it is everything we have in store for you!
@@ -64,7 +82,7 @@ Do you know the feeling of sitting down to watch a movie to then just proceed sc
 screenshot
 
 
-
+<a name="future"></a>
 # WHAT’S NEXT
 
 We see many ways we can improve and expand our dashboard:
@@ -72,21 +90,20 @@ We see many ways we can improve and expand our dashboard:
 2. Introduce other popular platforms to our analysis 
 3. Get more data on removed content from each platform, as well as selection for different countries. 
 
+<a name="team"></a>
 # Meet the Team
 
-Chad Barlow
-
-https://github.com/chadbarlow
-
+Chad Barlow:
+* https://github.com/chadbarlow
 <hr>
-Reid Walker
 
-https://github.com/rbw9891
+Reid Walker:
+* https://github.com/rbw9891
 <hr>
-Miodrag Radovic
 
-https://github.com/mradovic10
+Miodrag Radovic:
+* https://github.com/mradovic10
 <hr>
-Olga Dolzhko
 
-https://github.com/OlgaDlzk
+Olga Dolzhko:
+* https://github.com/OlgaDlzk
