@@ -23,6 +23,14 @@ def home():
 
 # after the source file is where the {{variable}} from the html is being set to
 
+@app.route("/wheel")
+def wheel():
+    return render_template("wheel_flask.html")
+
+@app.route("/team")
+def team():
+    return render_template("team_flask.html")
+
 @app.route("/get_horizontal")
 def get_horizontal():
     # variable to find all data in streamData collection
