@@ -38,8 +38,21 @@ def create_db():
     vertCol = db["streamVertical"]
     vertCol.drop()
 
+    sunCol = db["streamSunburst"]
+    sunCol.drop()
+
     # create streamData collection and insert data
     # db.streamData.insert_many(data)
     db.streamHorizontal.insert_one(data_horizontal)
 
     db.streamVertical.insert_one(data_vertical)
+
+     #open sunburst json file
+    with open("static/etl/json/sunburst_data.json") as file:
+        file_data = json.load(file)
+
+    # insert into streamSunburst collection
+    if isinstance(file_data, list):
+        db.streamSunburst.insert_many(file_data)
+    else:
+        db.streamSunburst.insert_one(file_data)
