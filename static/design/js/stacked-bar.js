@@ -125,7 +125,7 @@ function buildCharts(platform) {
             y: drama,
             name: 'Drama',
             type: 'bar',
-            // marker: {color: 'black'}
+            marker: {color: '#17226a'}
             
           };
           
@@ -134,6 +134,7 @@ function buildCharts(platform) {
             y: comedy,
             name: 'Comedy',
             type: 'bar',
+            marker: {color: '#9e855c'}
             
           };
           
@@ -142,6 +143,7 @@ function buildCharts(platform) {
             y: international,
             name: 'International',
             type: 'bar',
+            marker: {color: '#c5cfd3'}
             
           };
           
@@ -150,6 +152,7 @@ function buildCharts(platform) {
             y: action_adventure,
             name: 'Action & Adventure',
             type: 'bar',
+            marker: {color: '#385963'}
             
           };
           
@@ -158,6 +161,7 @@ function buildCharts(platform) {
             y: horror_suspense,
             name: 'Horror & Suspense',
             type: 'bar',
+            marker: {color: '#c6b9a3'}
             
           };
           
