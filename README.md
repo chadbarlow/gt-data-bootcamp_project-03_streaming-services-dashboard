@@ -29,12 +29,6 @@ The rise of streaming technology changed a lot. There is no need to pay up to 10
   <img src="https://user-images.githubusercontent.com/74025870/230246176-296f0151-a603-4c99-8235-7950f976bfd2.PNG" alt="image"/>
 </p>
 
-
-<a name="requirements"></a>
-## Requirements 
-
-screenshot
-
 <a name="dataacq"></a>
 ## Data Acquirement
 
