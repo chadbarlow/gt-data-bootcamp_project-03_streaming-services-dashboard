@@ -1,4 +1,4 @@
-const url = '../../etl/json/complete_horizontal.json'
+const url = '/get_horizontal'
 
 // Perform a GET request to the query URL.
 d3.json(url).then(function(data) {
