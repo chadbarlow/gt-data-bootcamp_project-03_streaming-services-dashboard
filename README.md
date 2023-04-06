@@ -72,8 +72,10 @@ screenshot
 ## Histogram
 The histogram shows film content by release year for all platforms! You can select only platfrom you are interested in, as well as compare one platform to another right on the chart. 
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/74025870/230509754-608a1fde-f684-4060-87da-03d513619d1f.PNG" alt="image"/>
+</p>
 
-screenshot
 
 <a name="tomato"></a>
 ## Horizontal Bar Chart
