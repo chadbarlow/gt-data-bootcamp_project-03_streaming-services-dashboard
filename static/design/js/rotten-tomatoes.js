@@ -1,144 +1,182 @@
-const url = ""
+let data;
+let genres;
 
-const getData = () => {
-    const ss_names_ls = ['Disney+  ', 'Netflix  ', 'Prime Video  ', 'Hulu  ']
-    const ss_RTratings_ls = ['92', '85', '77', '55']
-    const top_films_lsobjs = [
-        { "Comedy": "The Princess Bride", "Drama": "The Shawshank Redemption", "Action": "The Dark Knight", "Thriller": "The Silence of the Lambs", "Romance": "Titanic", "Horror": "The Shining", "Crime": "The Godfather", "Adventure": "The Lord of the Rings: The Fellowship of the Ring", "Sci-Fi": "Star Wars: Episode IV - A New Hope", "Fantasy": "The Lord of the Rings: The Return of the King", "Mystery": "Se7en", "Animation": "Spirited Away", "Family": "The Lion King", "Biography": "The Imitation Game", "History": "Schindler's List", "War": "Saving Private Ryan", "Music": "La La Land", "Sport": "Rocky", "Western": "The Good, the Bad and the Ugly", "Musical": "The Sound of Music" },
-        { "Comedy": "The Big Lebowski", "Drama": "The Godfather", "Action": "The Dark Knight", "Thriller": "The Silence of the Lambs", "Romance": "Titanic", "Horror": "The Shining", "Crime": "The Godfather", "Adventure": "The Lord of the Rings: The Fellowship of the Ring", "Sci-Fi": "Star Wars: Episode IV - A New Hope", "Fantasy": "The Lord of the Rings: The Return of the King", "Mystery": "Se7en", "Animation": "Spirited Away", "Family": "The Lion King", "Biography": "The Imitation Game", "History": "Schindler's List", "War": "Saving Private Ryan", "Music": "La La Land", "Sport": "Rocky", "Western": "The Good, the Bad and the Ugly", "Musical": "The Sound of Music" },
-        { "Comedy": "Wedding Crashers", "Drama": "The Shawshank Redemption", "Action": "The Dark Knight", "Thriller": "The Silence of the Lambs", "Romance": "Titanic", "Horror": "The Shining", "Crime": "The Godfather", "Adventure": "The Lord of the Rings: The Fellowship of the Ring", "Sci-Fi": "Star Wars: Episode IV - A New Hope", "Fantasy": "The Lord of the Rings: The Return of the King", "Mystery": "Se7en", "Animation": "Spirited Away", "Family": "The Lion King", "Biography": "The Imitation Game", "History": "Schindler's List", "War": "Saving Private Ryan", "Music": "La La Land", "Sport": "Rocky", "Western": "The Good, the Bad and the Ugly", "Musical": "The Sound of Music" },
-        { "Comedy": "The Hangover", "Drama": "The Shawshank Redemption", "Action": "The Dark Knight", "Thriller": "The Silence of the Lambs", "Romance": "Titanic", "Horror": "The Shining", "Crime": "The Godfather", "Adventure": "The Lord of the Rings: The Fellowship of the Ring", "Sci-Fi": "Star Wars: Episode IV - A New Hope", "Fantasy": "The Lord of the Rings: The Return of the King", "Mystery": "Se7en", "Animation": "Spirited Away", "Family": "The Lion King", "Biography": "The Imitation Game", "History": "Schindler's List", "War": "Saving Private Ryan", "Music": "La La Land", "Sport": "Rocky", "Western": "The Good, the Bad and the Ugly", "Musical": "The Sound of Music" }]
-    const top_films_ls = [];
-    for (var i = 0; i < top_films_lsobjs.length; i++) {
-        const entries = Object.entries(top_films_lsobjs[i]);
-        const htmlString = entries.map(([key, value]) => `<br><b>${key}:</b> ${value}`).join(" ");
-        top_films_ls.push(htmlString);
-    }
-    return {
+async function main() {
+  d3.json('/get_vertical').then((json_data) => {
+    // Convert the json_data object to an array
+    const dataArray = Object.values(json_data);
+    data = processData(dataArray);
+    genres = extractGenres(data);
 
-        ss_names_ls,
-        ss_RTratings_ls,
-        top_films_ls
-    };
-    console.log(top_films_ls)
-};
-
-const createBarChart = ({ ss_names_ls, ss_RTratings_ls, top_films_ls }) => {
-    const data = [{
-        type: 'bar',
-        y: ss_names_ls,
-        x: ss_RTratings_ls,
-        orientation: 'h',
-        text: top_films_ls,
-        hovertemplate: '<b>Top Films by Genre:</b><br>%{text}<extra></extra>',
-        hoverlabel: { bgcolor: "#FFF" },
-        marker: {
-            color: ['#FA3200', '#FA3200', '#FA3200', '#00912D'],
+    // Add checkboxes
+    const checkboxContainer = document.getElementById("genreCheckboxes");
+    for (const genre of genres) {
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.value = genre;
+      checkbox.id = genre;
+      checkbox.checked = selectedGenres.includes(genre);
+      checkbox.addEventListener("change", () => {
+        if (checkbox.checked) {
+          selectedGenres.push(checkbox.value);
+        } else {
+          selectedGenres = selectedGenres.filter((genre) => genre !== checkbox.value);
         }
-    }];
+        updateChart();
+      });
+      const label = document.createElement("label");
+      label.htmlFor = genre;
+      label.textContent = genre;
+      const container = document.createElement("div");
+      container.appendChild(checkbox);
+      container.appendChild(label);
+      container.style.display = "inline-block";
+      checkboxContainer.appendChild(container);
+    }
+
+    updateChart();
+  });
+
+  let selectedGenres = ["Drama", "Sports", "Documentaries"];
+
+  let genreColors = [
+    "#9e855c", // Dark tan brown
+    "#385963", // Dark slate blue
+    "#6b5b95", //Light grayish white
+    "#17262a", // Dark slate gray
+    "#46656f", // Grayish teal
+    "#6a8a95", // Grayish blue
+    "#a5b7bd", // Light grayish blue
+    "#c5cfd3", // Light grayish blue-gray
+    "#c6b9a3", // Tan gray
+    "#d3c3b1", // a light beige color
+    "#b3c8c3", // a light blue-gray color
+    "#aa9e8f", // a warm brown-gray color
+    "#a5a5a5", // a medium gray color
+    "#9b4f47", // a deep red-brown color
+    "#8f979d", // a cool gray-blue color
+    "#7d9a9a", // a muted teal color
+    "#6b5b95", // a purple-blue color
+    "#5c5c5c", // a dark gray color
+    "#3f4238" // a dark olive-green color
+  ];
+
+  function updateChart() {
+    const traceData = [];
+    for (const genre of selectedGenres) {
+      const genreIndex = genres.indexOf(genre);
+      const trace = {
+        x: [],
+        y: [],
+        name: genre,
+        type: "bar",
+        marker: {
+          color: genreColors[genreIndex],
+        },
+      };
+
+      for (const platform in data) {
+        trace.x.push(platform);
+        trace.y.push(data[platform][genre]);
+      }
+
+      traceData.push(trace);
+    }
+
     const layout = {
-        // title: '<b>Average Rotten Tomatoes Score</b><br>Across All Content',
-        titlefont: {
-            size: 20,
-            color: '#333333',
-            family: 'Oswald, sans-serif'
+      xaxis: {
+        title: "Platform",
+        font: {
+          size: 18,
+          color: "#1f77b4"
         },
-        xaxis: {
-            title: '',
-            titlefont: {
-                size: 12,
-                color: '#333333'
-            },
-            tickfont: {
-                size: 12,
-                color: '#333333'
-            },
-            zerolinecolor: '#4AAAA5',
+      },
+      yaxis: {
+        title: "Score",
+        font: {
+          size: 18,
+          color: "#1f77b4"
         },
-        yaxis: {
-            title: '',
-            titlefont: {
-                size: 12,
-                color: '#333333'
-            },
-            tickfont: {
-                size: 12,
-                color: '#333333'
-            },
+      },
+      barmode: "group",
+      legend: {
+        title: "Genre",
+        font: {
+        size: 16,
+        color: "#1f77b4"
         },
-        images: [
-            {
-                "source": "/static/design/img/png/rotten-tomatoes/certified_critics.png",
-                "xref": "x",
-                "yref": "y",
-                "x": ss_RTratings_ls[0],
-                "y": 0.5,
-                "sizex": 10,
-                "sizey": 10,
-                "xanchor": "center",
-                "yanchor": "center"
-            },
-            {
-                "source": "/static/design/img/png/rotten-tomatoes/certified_critics.png",
-                "xref": "x",
-                "yref": "y",
-                "x": ss_RTratings_ls[1],
-                "y": 1.5,
-                "sizex": 10,
-                "sizey": 10,
-                "xanchor": "center",
-                "yanchor": "center"
-            },
-            {
-                "source": "/static/design/img/png/rotten-tomatoes/certified_critics.png",
-                "xref": "x",
-                "yref": "y",
-                "x": ss_RTratings_ls[2],
-                "y": 2.5,
-                "sizex": 10,
-                "sizey": 10,
-                "xanchor": "center",
-                "yanchor": "center"
-            },
-            {
-                "source": "/static/design/img/png/rotten-tomatoes/rotten_critics.png",
-                "xref": "x",
-                "yref": "y",
-                "x": ss_RTratings_ls[3],
-                "y": 3.5,
-                "sizex": 10,
-                "sizey": 10,
-                "xanchor": "center",
-                "yanchor": "center"
-            }
-        ]
-    };
-    Plotly.newPlot('bar', data, layout);
+        },
+        margin: {
+        t: 30
+        },
+        legend: {
+        title: "",
+        font: {
+        family: "Fira Sans",
+        size: 16,
+        color: "#343A3F"
+        }
+        },
+        };
+        Plotly.newPlot("rotten-tomatoes", traceData, layout);
+      }
 
-};
+      const selectBoxes = document.querySelectorAll("select");
+      selectBoxes.forEach(selectBox => {
+      selectBox.addEventListener("change", updateChart);
+      });
+      }
+      
+      main();
+      
+      function processData(json_data) {
+      const parsedData = {};
+      
+      json_data.forEach(row => {
+      const platform = row['platform'];
+      const genre = row['listed_in'];
+      const score = parseFloat(row['score']);
+      
+      if (!parsedData[platform]) {
+        parsedData[platform] = {};
+      }
+      
+      if (!parsedData[platform][genre]) {
+        parsedData[platform][genre] = {
+          sum: 0,
+          count: 0
+        };
+      }
+      
+      parsedData[platform][genre].sum += score;
+      parsedData[platform][genre].count += 1;
+    });
 
-const updateCharts = (allData, selectionName) => {
-    const { ss_names_ls, ss_RTratings_ls, top_films_ls } = getData();
-    createBarChart({ ss_names_ls, ss_RTratings_ls, top_films_ls });
-};
-
-updateCharts();
-
-// const updateCharts = (allData, selectionName) => {
-//     const { sampleDataDict, topSampleValues, topOtuIds, topOtuLabels, wfreq, demoDict } = getSelectionData(allData, selectionName);
-//     updateDemographics(demoDict);
-//     createBarChart({ topSampleValues, topOtuIds, topOtuLabels });
-//     createBubbleChart(sampleDataDict);
-//     createGaugeChart(wfreq);
-// };
-
-// d3.json(url).then(allData => {
-//     createDropdown(allData);
-//     updateCharts(allData, "940"); //initialize charts with first selection
-//     d3.selectAll("#selDataset").on("change", () => {
-//         const selectionName = d3.event.target.value;
-//         updateCharts(allData, selectionName);
-//     });
-// }).catch(function (error) {
-//     console.log(error);
-// });
+    for (const platform in parsedData) {
+    for (const genre in parsedData[platform]) {
+    parsedData[platform][genre] = parsedData[platform][genre].sum / parsedData[platform][genre].count;
+    }
+    }
+    
+    return parsedData;
+    }
+    
+    function extractGenres(data) {
+    const genreCounts = {};
+    
+    for (const platform in data) {
+    for (const genre in data[platform]) {
+    if (!genreCounts[genre]) {
+    genreCounts[genre] = 0;
+    }
+    genreCounts[genre]++;
+    }
+    }
+    
+    const sortedGenres = Object.entries(genreCounts)
+    .sort(([, a], [, b]) => b - a)
+    .map(([genre]) => genre)
+    .slice(0, 10);
+    
+    return sortedGenres;
+    }      

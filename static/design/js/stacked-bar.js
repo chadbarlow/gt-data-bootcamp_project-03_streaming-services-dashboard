@@ -18,37 +18,17 @@ function main() {
 
 main();
 
-// function onlyUnique(value, index, array) {
-//   return self.indexOf(value) === index;
-// }
-///////////////
-// var graph_dict= {};
-// graph_dict['2000'] = {a:0,b:0,c:0};
-// console.log('2000' in graph_dict);
-// if('2000' in graph_dict)
-// {
-//   graph_dict['2000'].a += 1;
-// }
-// else
-// {
-//   graph_dict['2000'] = {a:0,b:0,c:0};
-// }
-// console.log(graph_dict)
-///////////////
-
 // change dropdown option and populate selected plots with relevant data
 function optionChanged(newData) {
   buildCharts(newData);
 }
-
-// 
-
 
 function buildCharts(platform) {
   let filters= {};
   let topFive = ['Drama', 'Comedies', 'International', 'Action & Adventure', 'Horror & Suspense'];
   let graph_dict= {};
   d3.json('/get_vertical').then((json_data) => {
+    console.log(json_data);
     Object.keys(json_data).forEach((key) => {
           if(json_data[key].platform == platform && topFive.includes(json_data[key].listed_in))
           {
@@ -108,8 +88,8 @@ function buildCharts(platform) {
             international.push(graph_dict[key].international);
             action_adventure.push(graph_dict[key].action_adventure);
             horror_suspense.push(graph_dict[key].horror_suspense);
-            // let bar = d3.select('#bar');
-            // bar.html('');
+            let bar = d3.select('#bar');
+            bar.html('');
           })
           // console.log(graph_dict);
           
@@ -164,18 +144,25 @@ function buildCharts(platform) {
             marker: {color: '#c6b9a3'}
             
           };
-          
 
           var data = [trace1, trace2, trace3, trace4, trace5];
           
-          var layout = {barmode: 'stack',
-          title: 'Keeping it fresh for top-5 genres',
-          xaxis: {
-            title: 'Year',
-          },
-          yaxis: {
-            title: 'Number of titles'
-          }
+
+          const layout = {
+            barmode: "stack",
+            legend: {
+              title: "Genre",
+              font: { size: 16, color: "#1f77b4" },
+            },
+            margin: { t: 30 },
+            legend: {
+              title: "",
+              font: {
+                family: "Fira Sans",
+                size: 16,
+                color: "#343A3F"
+              }
+            },
           };
           
           Plotly.newPlot('stacked-bar', data, layout);
