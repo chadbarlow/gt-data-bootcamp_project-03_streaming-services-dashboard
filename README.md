@@ -70,12 +70,14 @@ screenshot
 
 <a name="curve"></a>
 ## Histogram
+The histogram shows film content by release year for all platforms! You can select only platfrom you are interested in, as well as compare one platform to another right on the chart. 
 
 
 screenshot
 
 <a name="tomato"></a>
 ## Horizontal Bar Chart
+On our horizontal bar chart you can compare average scores for selected genres for all platforms. So if you are a fan of thrillers, for instance, and want to see what platform offers better received thriller content - check it out! 
 
 
 screenshot
