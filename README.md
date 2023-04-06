@@ -14,10 +14,11 @@
 6. [Sunburst Chart](#sun)
 7. [Histogram](#curve)
 8. [Horizontal Bar Chart](#tomato)
-9. [Stacked Bar Chart](#stacked)
-10. [The Wheel](#wheel)
-11. [What's Next](#future)
-12. [Meat the Team](#team)
+9. [Line Graph](#line)
+10. [Stacked Bar Chart](#stacked)
+11. [The Wheel](#wheel)
+12. [What's Next](#future)
+13. [Meat the Team](#team)
 
 
 <a name="about"></a>
@@ -83,6 +84,16 @@ On our horizontal bar chart you can compare average scores for selected genres f
 
 
 screenshot
+
+<a name="line"></a>
+## Line Graph
+
+Line graph represents the amount of movies added to each platofrms through the years!
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/74025870/230510065-3bc866f6-cf84-44f3-a136-c0c88fe2aba5.PNG" alt="image"/>
+</p>
+
 
 
 <a name="stacked"></a>
