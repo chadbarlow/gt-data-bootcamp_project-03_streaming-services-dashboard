@@ -89,7 +89,11 @@ screenshot
 We know, we know… those boring bar charts. But they are boring for a reason. They are used a lot since they are easy to read and understand. Hence, the bar chart! We explored the top-five most popular genres across all the platforms and dove into information of how well represented they are and how much content has been added for each of these genres since 2016. Now, two things to consider here. Amazon Prime didn’t release the information on added content through the years, and Disney Plus launched in 2019! Also, to keep our visuals informative and easy to read we didn’t normalize y-axis. 
 
 
-screenshot
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/74025870/230509563-8e0449bf-718a-4842-a175-372271056429.PNG" alt="image"/>
+</p>
+
 
 
 <a name="wheel"></a>
