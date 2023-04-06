@@ -1,6 +1,6 @@
 function main() {
     let selector = d3.select('#selDataset');
-    platformNames = ['Netflix', 'Hulu', 'Disney Plus', 'Amazon Prime'];
+    platformNames = ['Netflix', 'Hulu', 'Disney Plus'];
     d3.json('/get_vertical').then((data) => {
       //console.log(data[0].added.substring(0,4));    
       platformNames.forEach(element => {

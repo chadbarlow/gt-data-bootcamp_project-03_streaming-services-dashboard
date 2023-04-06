@@ -44,41 +44,46 @@
       </div>
     </div>
 
-   <div class="row choose-platform">
-      <div class="col-md-2">
-        <div class="well">
-          <h5>Platform</h5>
+   
+
+    <div class="row">
+
+      <div class="col-md-12">
+        <div id="sunburst"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div id="bar"></div>
+      </div>
+
+      <div class="curve">
+        <div id="decades"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2" >
+        <div class="well" style="text-align: center;">
+          <h5 >Platform</h5>
           <select id="selDataset" onchange="optionChanged(this.value)">
           </select>
         </div>
-    </div>
+      </div>
 
-    <div class="row">
-  
-      <div class="col-md-5" style="text-align: center;">
-        <div id="bar-average-score"></div>
-      </div>
-      <div class="col-md-5">
-        <div id="graph-running"></div>
-      </div>
-    </div>
-  </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div id="donut"></div>
-      </div>
-    </div>
 
-    <div class="row">
-      <div class="col-md-12">
-        <div id="bar"></div>
+      <div class="col-md-10">
+        <div id="stacked-bar"></div>
       </div>
     </div>
   </div>
 
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="../static/design/js/test_stacked_bar.js"></script>
+  <script src="../static/design/js/stacked-bar.js"></script>
+  <script src="../static/design/js/decades.js"></script>
+  <!-- <script src="../static/design/js/rotten-tomatoes.js"></script> -->
  
 
   
