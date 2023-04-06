@@ -42,7 +42,7 @@ d3.json(url).then(function(data) {
         histnorm: 'percent',
         opacity: 0.5,
         marker: {
-            color: '#E50914'
+            color: '#17226a'
         },
         xbins: {
             end: 2022, 
@@ -59,7 +59,7 @@ d3.json(url).then(function(data) {
         histnorm: 'percent',
         opacity: 0.5,
         marker: {
-            color: '#146EB4'
+            color: '#9e855c'
         },
         xbins: {
             end: 2022, 
@@ -76,7 +76,7 @@ d3.json(url).then(function(data) {
         histnorm: 'percent',
         opacity: 0.7,
         marker: {
-            color: '#BFFBFD'
+            color: '#c5cfd3'
         },
         xbins: {
             end: 2022, 
@@ -93,7 +93,7 @@ d3.json(url).then(function(data) {
         histnorm: 'percent',
         opacity: 0.5,
         marker: {
-            color: '#3DBB3D'
+            color: '#385963'
         },
         xbins: {
             end: 2022, 

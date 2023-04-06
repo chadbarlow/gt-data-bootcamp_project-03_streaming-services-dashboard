@@ -168,7 +168,15 @@ function buildCharts(platform) {
 
           var data = [trace1, trace2, trace3, trace4, trace5];
           
-          var layout = {barmode: 'stack'};
+          var layout = {barmode: 'stack',
+          title: 'Keeping it fresh for top-5 genres',
+          xaxis: {
+            title: 'Year',
+          },
+          yaxis: {
+            title: 'Number of titles'
+          }
+          };
           
           Plotly.newPlot('stacked-bar', data, layout);
 
