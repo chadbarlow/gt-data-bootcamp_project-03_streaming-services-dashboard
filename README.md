@@ -32,13 +32,15 @@ screenshot
 <a name="dataacq"></a>
 ## Data Acquirement
 
-Kaggle provided us with 4 datasets, one for each platform (Netflix, Hulu, Disney+, Prime Video), which we merged together. Each dataset contained the following information: movie title, genre, release date, added date, rating.
+Kaggle provided us with 4 datasets, one for each platform (Netflix, Hulu, Disney+, Prime Video). Each dataset contained the following information: movie title, genre, release date, added date, rating.
 Additionally, we cross-checked our merged dataset with the dataset that contained movies’ rotten tomato scores. Finally, we used ChatGPT API to re-assign genres and subgenres to each movie. 
 
 <a name="dataclean"></a>
 ## Data Cleaning
 
-Misko
+Our data was cleaned in Jupyter Notebook using Pandas. The first step in cleaning the data was to combine the four CSV files representing each streaming service into one. Once this unified dataset was cleaned and complete, it was merged by movie title with a dataset of movies that had Rotten Tomatoes scores. Only movies with a Rotten Tomatoes score were kept for the purposes of our analysis. These preliminary CSV files are located in the 'original_data' folder. Once cleaned and condensed, they were exported in both their individual and merged formats into the 'cleaned_data' folder.
+In order to get the full benefits of genre analysis across all four streaming platforms, certain genres of similar nature had to be combined, while others renamed, due to differences in nomenclature across platforms. Once genre labels were satisfactorily made uniform, the data needed to be organized in a way where analysis could be done by the specific genres that each individual movie was 'listed in'. To do this, two versions of complete data that were eventually stored in our Database were created, both found in the 'complete_data' folder.
+The first version, or the vertical version, had each movie split up into multiple renditions of itself based on genre. This version would be ideal for analyses specific to genres. The second version, or the horizontal version, added genre columns to each movie title. If a movie was listed in a specific genre, it was denoted by a '1' in that column. Otherwise, the value of the column would be '0'. This version did not have movie duplicates, which would make it suitable in situations where overall trends were being analyzed.
 
 
 <a name="dashboard"></a>
@@ -53,13 +55,13 @@ To give you a breakdown of the platforms by genre and sub-genre (including the n
 screenshot
 
 <a name="curve"></a>
-## Overlapping Curve Chart
+## Histogram
 
 
 screenshot
 
 <a name="tomato"></a>
-## Rotten Tomato Bar Chart
+## Horizontal Bar Chart
 
 
 screenshot
