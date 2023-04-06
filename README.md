@@ -7,18 +7,17 @@
 
 ## Table of Contents
 1. [About](#about)
-2. [Requirements](#requirements)
-3. [Data Acquirement](#dataacq)
-4. [Data Cleaning](#dataclean)
-5. [Dashboard](#dashboard)
-6. [Sunburst Chart](#sun)
-7. [Histogram](#curve)
-8. [Horizontal Bar Chart](#tomato)
-9. [Line Graph](#line)
-10. [Stacked Bar Chart](#stacked)
-11. [The Wheel](#wheel)
-12. [What's Next](#future)
-13. [Meat the Team](#team)
+2. [Data Acquirement](#dataacq)
+3. [Data Cleaning](#dataclean)
+4. [Dashboard](#dashboard)
+5. [Sunburst Chart](#sun)
+6. [Histogram](#curve)
+7. [Horizontal Bar Chart](#tomato)
+8. [Line Graph](#line)
+9. [Stacked Bar Chart](#stacked)
+10. [The Wheel](#wheel)
+11. [What's Next](#future)
+12. [Meat the Team](#team)
 
 
 <a name="about"></a>
@@ -67,7 +66,10 @@ The first version, or the vertical version, had each movie split up into multipl
 
 To give you a breakdown of the platforms by genre and sub-genre (including the number of movies each has as well) we present you with a sunburst chart. Click through and explore different options of each platform! See if maybe a specific niche genre that you are interested in is represented and by which service. But be careful, those sunburst charts can be quite addictive! 
 
-screenshot
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/74025870/230510581-97e37175-330e-4cbe-8270-338d7e54a2fa.PNG" alt="image"/>
+</p>
+
 
 <a name="curve"></a>
 ## Histogram
@@ -76,7 +78,6 @@ The histogram shows film content by release year for all platforms! You can sele
 <p align="center">
   <img src="https://user-images.githubusercontent.com/74025870/230509754-608a1fde-f684-4060-87da-03d513619d1f.PNG" alt="image"/>
 </p>
-
 
 <a name="tomato"></a>
 ## Horizontal Bar Chart
