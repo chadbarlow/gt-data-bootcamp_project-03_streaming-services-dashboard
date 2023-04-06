@@ -12,8 +12,8 @@
 4. [Data Cleaning](#dataclean)
 5. [Dashboard](#dashboard)
 6. [Sunburst Chart](#sun)
-7. [Curve Chart](#curve)
-8. [Rotten Tomato Bar Chart](#tomato)
+7. [Histogram](#curve)
+8. [Horizontal Bar Chart](#tomato)
 9. [Stacked Bar Chart](#stacked)
 10. [The Wheel](#wheel)
 11. [What's Next](#future)
@@ -44,8 +44,8 @@ Additionally, we cross-checked our merged dataset with the dataset that containe
 <a name="dataclean"></a>
 ## Data Cleaning
 
-Our data was cleaned in Jupyter Notebook using Pandas. The first step in cleaning the data was to combine the four CSV files representing each streaming service into one. Once this unified dataset was cleaned and complete, it was merged by movie title with a dataset of movies that had Rotten Tomatoes scores. Only movies with a Rotten Tomatoes score were kept for the purposes of our analysis. These preliminary CSV files are located in the 'original_data' folder. Once cleaned and condensed, they were exported in both their individual and merged formats into the 'cleaned_data' folder.
-In order to get the full benefits of genre analysis across all four streaming platforms, certain genres of similar nature had to be combined, while others renamed, due to differences in nomenclature across platforms. Once genre labels were satisfactorily made uniform, the data needed to be organized in a way where analysis could be done by the specific genres that each individual movie was 'listed in'. To do this, two versions of complete data that were eventually stored in our Database were created, both found in the 'complete_data' folder.
+Our data was cleaned in Jupyter Notebook using Pandas. The first step in cleaning the data was to combine the four CSV files representing each streaming service into one. Once this unified dataset was cleaned and complete, it was merged by movie title with a dataset of movies that had Rotten Tomatoes scores. Only movies with a Rotten Tomatoes score were kept for the purposes of our analysis. These preliminary CSV files are located in the 'original_data' folder. Once cleaned and condensed, they were exported in both their individual and merged formats into the 'cleaned_data' folder.<br><br>
+In order to get the full benefits of genre analysis across all four streaming platforms, certain genres of similar nature had to be combined, while others renamed, due to differences in nomenclature across platforms. Once genre labels were satisfactorily made uniform, the data needed to be organized in a way where analysis could be done by the specific genres that each individual movie was 'listed in'. To do this, two versions of complete data that were eventually stored in our Database were created, both found in the 'complete_data' folder.<br><br>
 The first version, or the vertical version, had each movie split up into multiple renditions of itself based on genre. This version would be ideal for analyses specific to genres. The second version, or the horizontal version, added genre columns to each movie title. If a movie was listed in a specific genre, it was denoted by a '1' in that column. Otherwise, the value of the column would be '0'. This version did not have movie duplicates, which would make it suitable in situations where overall trends were being analyzed.
 
 
