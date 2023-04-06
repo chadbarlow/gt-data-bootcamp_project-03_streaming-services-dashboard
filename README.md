@@ -84,7 +84,7 @@ On our horizontal bar chart you can compare average scores for selected genres f
 <a name="line"></a>
 ## Line Graph
 
-Line graph represents the amount of movies added to each platofrms through the years!
+Line graph represents the number of movies added to each platform through the years!
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/74025870/230510065-3bc866f6-cf84-44f3-a136-c0c88fe2aba5.PNG" alt="image"/>
