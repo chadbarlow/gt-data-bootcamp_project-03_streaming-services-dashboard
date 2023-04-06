@@ -99,7 +99,10 @@ Exploring data and playing with charts is a lot of fun! But don’t think that i
 Do you know the feeling of sitting down to watch a movie to then just proceed scrolling through countless options, spending time reading every description, maybe even watching mini-tailers? Your food gets cold and your partner is getting more frustrated saying “Just pick something!”. But it doesn’t have to be this way anymore! Let us introduce you to the Wheel! We represented the top 8 most favored genres across all four platforms, all you have to do is just spin it to see what each platform has to offer. 
 
 
-screenshot
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/74025870/230509111-8ca6a4bf-250a-4c2c-b8fe-e986dfd0bc03.PNG" alt="image"/>
+</p>
+
 
 
 <a name="future"></a>
