@@ -108,8 +108,8 @@ function buildCharts(platform) {
             international.push(graph_dict[key].international);
             action_adventure.push(graph_dict[key].action_adventure);
             horror_suspense.push(graph_dict[key].horror_suspense);
-            let bar = d3.select('#bar');
-            bar.html('');
+            // let bar = d3.select('#bar');
+            // bar.html('');
           })
           // console.log(graph_dict);
           
