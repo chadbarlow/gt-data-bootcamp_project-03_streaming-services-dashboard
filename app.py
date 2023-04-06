@@ -19,7 +19,7 @@ def home():
     #first document in the collection
     #first_record = mongo.db.streamHorizontal.find_one()
 
-    return render_template("index_flask.html")
+    return render_template("index.html")
 
 # after the source file is where the {{variable}} from the html is being set to
 
