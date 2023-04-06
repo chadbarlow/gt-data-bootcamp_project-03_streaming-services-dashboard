@@ -1,8 +1,9 @@
 <h1 align="center"> STREAMING SERVICES MOVIE DASHBOARD </h1> 
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/74025870/229930895-1b2daead-6373-429c-8c29-d0d4ecf0374a.PNG" alt="image"/>
+  <img src="https://user-images.githubusercontent.com/74025870/230246133-9bb16fbb-3f4b-4063-982e-4180e8b32499.PNG" alt="image"/>
 </p>
+
 
 ## Table of Contents
 1. [About](#about)
@@ -23,6 +24,11 @@
 # ABOUT
 
 The rise of streaming technology changed a lot. There is no need to pay up to 100$ in costs for TV cable, the content has become more diverse, and there has even been a change in consumption habits of an audience. However, growing demand spawned so many options that choosing the platforms that suit your needs and desires the best AND staying within a budget can become a challenging task. Let’s break down four major movie streaming services and explore what they have to offer! 
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/74025870/230246176-296f0151-a603-4c99-8235-7950f976bfd2.PNG" alt="image"/>
+</p>
+
 
 <a name="requirements"></a>
 ## Requirements 
