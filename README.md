@@ -41,6 +41,14 @@ screenshot
 Kaggle provided us with 4 datasets, one for each platform (Netflix, Hulu, Disney+, Prime Video). Each dataset contained the following information: movie title, genre, release date, added date, rating.
 Additionally, we cross-checked our merged dataset with the dataset that contained movies’ rotten tomato scores. Finally, we used ChatGPT API to re-assign genres and subgenres to each movie. 
 
+Datasets used:<br>
+https://www.kaggle.com/shivamb/amazon-prime-movies-and-tv-shows<br>
+https://www.kaggle.com/shivamb/disney-movies-and-tv-shows<br>
+https://www.kaggle.com/shivamb/netflix-shows<br>
+https://www.kaggle.com/shivamb/hulu-movies-and-tv-shows<br>
+https://www.kaggle.com/datasets/ruchi798/movies-on-netflix-prime-video-hulu-and-disney<br>
+
+
 <a name="dataclean"></a>
 ## Data Cleaning
 
