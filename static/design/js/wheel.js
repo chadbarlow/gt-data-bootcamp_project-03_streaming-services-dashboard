@@ -1,16 +1,29 @@
-var padding = {top:20, right:40, bottom:0, left:0},
-            w = 500 - padding.left - padding.right,
-            h = 500 - padding.top  - padding.bottom,
+var padding = {top:0, right:20, bottom:0, left:0},
+            w = 800 - padding.left - padding.right,
+            h = 800 - padding.top  - padding.bottom,
             r = Math.min(w, h)/2,
             rotation = 0,
             oldrotation = 0,
             picked = 100000,
-            oldpick = [],
-            color = d3.scale.category20();//category20c()
-            //randomNumbers = getRandomNumbers();
-        //http://osric.com/bingo-card-generator/?title=HTML+and+CSS+BINGO!&words=padding%2Cfont-family%2Ccolor%2Cfont-weight%2Cfont-size%2Cbackground-color%2Cnesting%2Cbottom%2Csans-serif%2Cperiod%2Cpound+sign%2C%EF%B9%A4body%EF%B9%A5%2C%EF%B9%A4ul%EF%B9%A5%2C%EF%B9%A4h1%EF%B9%A5%2Cmargin%2C%3C++%3E%2C{+}%2C%EF%B9%A4p%EF%B9%A5%2C%EF%B9%A4!DOCTYPE+html%EF%B9%A5%2C%EF%B9%A4head%EF%B9%A5%2Ccolon%2C%EF%B9%A4style%EF%B9%A5%2C.html%2CHTML%2CCSS%2CJavaScript%2Cborder&freespace=true&freespaceValue=Web+Design+Master&freespaceRandom=false&width=5&height=5&number=35#results
-        var data = [
-                    {"label":"Drama",  "value":0}, // padding
+            oldpick = [];
+            var colors = [
+                "#9e855c",  // Dark tan brown
+                "#385963",  // Dark slate blue
+                "#9b4f47", // a deep red-brown color
+                "#17262a",  // Dark slate gray
+                "#46656f",  // Grayish teal
+                "#d3c3b1", // a light beige color
+                "#b3c8c3", // a light blue-gray colo
+                "#7d9a9a", // a muted teal color
+                "#6b5b95", // a purple-blue color
+                "#5c5c5c", // a dark gray color
+                "#3f4238" // a dark olive-green color
+                ];
+            var color = d3.scale.ordinal()
+            .range(colors);
+
+            var data = [
+                    {"label":"Drama",  "value":1}, // padding
                     {"label":"International",  "value":1}, //font-family
                     {"label":"Documentaries",  "value":2}, //color
                     {"label":"Comedies",  "value":3}, //font-weight
@@ -20,6 +33,8 @@ var padding = {top:20, right:40, bottom:0, left:0},
                     {"label":"Family",  "value":7}, //bottom
                     
         ];
+        // var color = d3.scaleOrdinal()
+        //       .range(["#9e855c", "#385963", "#f7f9f5", "#17262a", "#46656f", "#6a8a95", "#a5b7bd", "#c5cfd3", "#c6b9a3", "#ffffff"]);
         var svg = d3.select('#chart')
             .append("svg")
             .data([data])
@@ -44,15 +59,16 @@ var padding = {top:20, right:40, bottom:0, left:0},
         arcs.append("path")
             .attr("fill", function(d, i){ return color(i); })
             .attr("d", function (d) { return arc(d); });
-        // add the text
-        arcs.append("text").attr("transform", function(d){
-                d.innerRadius = 0;
-                d.outerRadius = r;
-                d.angle = (d.startAngle + d.endAngle)/2;
-                return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")translate(" + (d.outerRadius -10) +")";
-            })
+        arcs.append("text")
+            .attr("transform", function(d){
+                    d.innerRadius = 0;
+                    d.outerRadius = r - 20;
+                    d.angle = (d.startAngle + d.endAngle)/2;
+                    return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")translate(" + (d.outerRadius -10) +")";
+                })
             .attr("text-anchor", "end")
-            .text( function(d, i) {
+            .style("fill", "white") // add this line to set the text color
+            .text(function(d, i) {
                 return data[i].label;
             });
         container.on("click", spin);
@@ -91,7 +107,7 @@ var padding = {top:20, right:40, bottom:0, left:0},
                     //populate question
                     // d3.select("#question h1")
                     //     .text(data[picked].question);
-                    d3.json("../static/etl/json/complete_vertical.json", function(json_data) {
+                    d3.json("/get_vertical", function(json_data) {
                         // console.log(json_data[0]['Genres']);
 
                         getRandMovieSuggestion(data[picked].label, json_data);
@@ -124,8 +140,8 @@ var padding = {top:20, right:40, bottom:0, left:0},
             .attr("x", 0)
             .attr("y", 15)
             .attr("text-anchor", "middle")
-            .text("SPIN")
-            .style({"font-weight":"bold", "font-size":"30px"});
+            .text("SPIN!")
+            .style({"font-weight":"bold", "font-style":"italic", "font-size":"38px", "letter-spacing":"2px", "cursor":"pointer"});
         
         
         function rotTween(to) {
@@ -281,11 +297,6 @@ var padding = {top:20, right:40, bottom:0, left:0},
                 document.getElementById("p10").innerHTML = String(prime_platform[prime_id]);
                 document.getElementById("p11").innerHTML = String(prime_movie[prime_id]);
                 document.getElementById("p12").innerHTML = String(prime_description[prime_id]);     
-            };                      
-            
-            
-            
-            
-            
+            };                     
         }
 

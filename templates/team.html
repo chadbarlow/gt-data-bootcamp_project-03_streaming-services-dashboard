@@ -1,91 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Streaming platforms</title>
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/333b0fbd57.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../static/design/css/styles.css">
-</head>
-
-<body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div>
-            <a id="logo" href="index.html"><i class="fa-sharp fa-solid fa-house"></i> </a>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="../static/design/css/styles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;300;400;500;600;700;800&display=swap"
+    />
+    <title>You Don't Know JS</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbar"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" id="home" href="/">Home</a>
+          <a class="nav-item nav-link" id="wheel" href="/wheel"
+            >Spin the Wheel</a
+          >
+          <a class="nav-item nav-link active" id="team" href="/team"
+            >About Us</a
+          >
         </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/wheel">Fun</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/team">Team</a>
-                </li>
-            </ul>
-        </div>
+      </div>
     </nav>
-
-    <div class="container">
-        <div class="description-content" style="text-align: center;">
-            <h1 class="description-header2">Meet the Team</h1>
-            <hr>
-            <p class="text-font text-pos">Contact us for any data projects!</p>
-            <div class="container" style="padding-bottom: 40px;">
-                <div class="row">
-                    <div class="col-lg-6" style="padding: 20px;">
-                        <div class="Contact">Chad Barlow</div>
-                        <a href="https://github.com/chadbarlow" target="_blank">
-                            <img src="../static/design/img/headshots/chad.png" alt="Chad Barlow">
-                        </a>
-                    </div>
-                    <div class="col-lg-6" style="padding: 20px;">
-                        <div class="imageNav-header">Reid Walker</div>
-                        <a href="https://github.com/rbw9891" target="_blank">
-                            <img src="../static/design/img/headshots/reid.png" alt="Reid Walker">
-                        </a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6" style="padding: 20px;">
-                        <div class="imageNav-header">Miodrag Radovic</div>
-                        <a href="https://github.com/mradovic10" target="_blank">
-                            <img src="/static/design/img/headshots/misko.png" alt="Miodrag Radovic">
-                        </a>
-                    </div>
-                    <div class="col-lg-6" style="padding: 20px;">
-                        <div class="imageNav-header">Olga Dolzhko</div>
-                        <a href="https://github.com/OlgaDlzk.html" target="_blank">
-                            <img src="../static/design/img/headshots/olga.png" alt="Olga Dolzhko">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>Meet the Team</h1>
+        <h3>
+          Contact us for data science projects, consulting, and training!
+      </h3>
+      </div>
     </div>
-    <!-- End of container -->
-
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-
-</body>
-
+    <div class="container" style="padding-top: 40px">
+      <div class="row">
+        <div class="col-lg-6 headshots">
+          <a href="https://github.com/chadbarlow" target="_blank">
+            <div class="headshot-wrapper">
+            <img class="headshot-image" src="../static/design/img/headshots/chad.png" alt="Chad Barlow" />
+            </div>
+          </a>
+          <div class="team-names"><h5>Chad Barlow</h5></div>
+        </div>
+        <div class="col-lg-6 headshots">
+          <a href="https://github.com/rbw9891" target="_blank">
+            <div class="headshot-wrapper">
+            <img class="headshot-image" src="../static/design/img/headshots/reid.png" alt="Reid Walker" />
+            </div>
+          </a>
+          <div class="team-names"><h5>Reid Walker</h5></div>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-lg-6 headshots">
+          <a href="https://github.com/mradovic10" target="_blank">
+            <div class="headshot-wrapper">
+            <img class="headshot-image" src="/static/design/img/headshots/misko.png" alt="Miodrag Radovic" />
+            </div>
+          </a>
+          <div class="team-names"><h5>Miodrag Radovic</h5></div>
+        </div>
+        <div class="col-lg-6 headshots">
+          <a href="https://github.com/OlgaDlzk.html" target="_blank">
+            <div class="headshot-wrapper">
+            <img class="headshot-image" src="../static/design/img/headshots/olga.png" alt="Olga Dolzhko" />
+            </div>
+          </a>
+          <div class="team-names"><h5>Olga Dolzhko</h5></div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="../static/design/js/wheel.js" charset="utf-8"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

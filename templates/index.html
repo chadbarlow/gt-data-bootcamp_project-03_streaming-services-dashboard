@@ -1,101 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Streaming platforms</title>
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://kit.fontawesome.com/333b0fbd57.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="../static/design/css/styles.css">
-</head>
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="../static/design/css/styles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;300;400;500;600;700;800&display=swap"
+    />
+    <title>You Don't Know JS</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbar"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" id="home" href="/">Home</a>
+          <a class="nav-item nav-link" id="wheel" href="/wheel"
+            >Spin the Wheel</a
+          >
+          <a class="nav-item nav-link" id="team" href="/team">About Us</a>
+        </div>
+      </div>
+    </nav>
+    <!-- end navbar -->
 
-<body>
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div>
-      <a id="logo" href="index.html"><i class="fa-sharp fa-solid fa-house"></i> </a>
-    </div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/wheel">Fun</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/team">Team</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-  <div class="container">
+    <!-- header -->
     <div class="row">
       <div class="col-md-12 jumbotron text-center">
         <h1>Streaming Services Movie Dashboard</h1>
-        <p>Make an analytical excursion to discover hidden truths about movie content on your favorite streaming
-          platforms!</p>
+        <h3>
+          Make an analytical excursion to discover hidden truths about movie
+          content on your favorite streaming platforms!
+        </h3>
       </div>
     </div>
+    <!-- end header -->
 
-
-    <div class="row">
-
-      <div class="col-md-12">
-        <div id="sunburst"></div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-6">
-        <div id="bar-rotten"></div>
-      </div>
-
-      <div class="curve">
-        <div id="decades"></div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-2" >
-        <div class="well" style="text-align: center;">
-          <h5 >Platform</h5>
-          <select id="selDataset" onchange="optionChanged(this.value)">
-          </select>
+    <!-- sunburst -->
+    <div class="container">
+      <div class="sunburst-container">
+        <div class="row mb-4">
+          <div class="col text-center">
+            <h5>Films by Platforms and Genre</h5>
+            <div id="sunburst-child-container"></div>
+            <div id="tooltip-container"></div>
+          </div>
         </div>
       </div>
 
+      <!-- rotten-tomatoes -->
+      <div class="row mb-4">
+        <div class="col text-center">
+          <h5>Average Rotten Tomatoes Scores</h5>
+          <h6>Per Selected Genres for All Platform</h6>
+          <div id="genreCheckboxes"></div>
+          <div id="rotten-tomatoes"></div>
+        </div>
+      </div>
 
-      <div class="col-md-10">
-        <div id="stacked-bar"></div>
+      <!--line -->
+      <div class="row mb-4">
+        <div class="col text-center">
+          <h5>Number of Films Added to Each Platform</h5>
+          <h6>Per Year</h6>
+          <!-- <div id="lineCheckboxes"></div> -->
+          <div id="line"></div>
+        </div>
+      </div>
+
+      <!--stacked-bar -->
+      <div class="row mb-4">
+        <div class="col text-center">
+          <h5>Number of Films Added</h5>
+          <h6>Per Genre Per Platform</h6>
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+          <div id="stacked-bar"></div>
+        </div>
+      </div>
+
+      <!--decades -->
+      <div class="row mb-4">
+        <div class="col text-center">
+          <h5>Number of Films Released in Each Decade</h5>
+          <h6>Per Platform</h6>
+          <div id="decadesCheckboxes"></div>
+          <div id="decades"></div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <script src="https://d3js.org/d3.v5.min.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="../static/design/js/stacked-bar.js"></script>
-  <script src="../static/design/js/decades.js"></script>
+    <!-- charting libraries -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-sunburst.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
 
+    <!-- Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
 
+    <!-- other libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-
-</body>
-
+    <!-- chart-rendering JS -->
+    <script src="../static/design/js/sunburst.js"></script>
+    <script src="../static/design/js/rotten-tomatoes.js"></script>
+    <script src="../static/design/js/stacked-bar.js"></script>
+    <script src="../static/design/js/decades.js"></script>
+    <script src="../static/design/js/line.js"></script>
+  </body>
 </html>
