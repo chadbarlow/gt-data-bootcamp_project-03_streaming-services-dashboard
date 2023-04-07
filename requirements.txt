@@ -19,7 +19,6 @@ importlib-metadata==6.1.0
 itsdangerous==2.1.2
 Jinja2==3.1.2
 MarkupSafe==2.1.2
-numpy==1.24.2
 outcome==1.2.0
 packaging==23.0
 pandas==2.0.0
